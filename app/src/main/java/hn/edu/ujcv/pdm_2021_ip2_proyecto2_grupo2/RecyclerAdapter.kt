@@ -1,11 +1,13 @@
 package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
+import android.content.Intent
+import android.os.Process
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
-import  android.widget.ImageView
-import com.google.android.material.snackbar.Snackbar
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -19,7 +21,8 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Registrar un Empleado", "Realizar un Pedido",
         "Realizar una  Factura", "Enviar Factura por correo")
 
-    private val images = intArrayOf(R.drawable.registro_cliente,
+    private val images = intArrayOf(
+        R.drawable.registro_cliente,
         R.drawable.registrar_menu, R.drawable.mesa,
         R.drawable.empleado, R.drawable.pedido,
         R.drawable.factura, R.drawable.enviar)
@@ -42,11 +45,36 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemView.setOnClickListener{ v: View->
                 var position: Int = getAdapterPosition()
 
-                Snackbar.make(v,"",
-                        Snackbar.LENGTH_LONG).setAction("Action",null).show()
+
+                when(position){
+                    0 -> GoRegistrarCliente(itemView)
+                    1 -> GoRegistrarMenu(itemView)
+                    else->GoMain(itemView)
+
+                }
+
+
+
+
             }
         }
     }
+    private fun GoMain(itemView: View){
+        val intent = Intent(itemView.context, MainActivity::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoRegistrarMenu(itemView: View) {
+        val intent = Intent(itemView.context, MainActivity::class.java)
+        itemView.context.startActivity(intent)
+    }
+
+    fun GoRegistrarCliente(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarCliente ::class.java)
+        itemView.context.startActivity(intent)
+    }
+
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         viewHolder.itemTitle.text= titles[i]
