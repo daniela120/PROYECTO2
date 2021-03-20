@@ -49,6 +49,8 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 when(position){
                     0 -> GoRegistrarCliente(itemView)
                     1 -> GoRegistrarMenu(itemView)
+                    2 -> GoRegistrarMesa(itemView)
+                    3 -> GoRegistrarEmpleado(itemView)
                     else->GoMain(itemView)
 
                 }
@@ -69,9 +71,16 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val intent = Intent(itemView.context, MainActivity::class.java)
         itemView.context.startActivity(intent)
     }
-
+    fun GoRegistrarMesa(itemView: View) {
+        val intent = Intent(itemView.context, MainActivity::class.java)
+        itemView.context.startActivity(intent)
+    }
     fun GoRegistrarCliente(itemView: View) {
         val intent = Intent(itemView.context, RegistrarCliente ::class.java)
+        itemView.context.startActivity(intent)
+    }
+    fun GoRegistrarEmpleado(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarEmpleado ::class.java)
         itemView.context.startActivity(intent)
     }
 
