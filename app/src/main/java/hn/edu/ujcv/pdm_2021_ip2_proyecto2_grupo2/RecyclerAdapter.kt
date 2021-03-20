@@ -22,9 +22,9 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Realizar una  Factura", "Enviar Factura por correo")
 
     private val images = intArrayOf(
-        R.drawable.registro_cliente,
-        R.drawable.registrar_menu, R.drawable.mesa,
-        R.drawable.empleado, R.drawable.pedido,
+        R.drawable.cliente,
+        R.drawable.menu, R.drawable.mesa,
+        R.drawable.empleado, R.drawable.pedidox,
         R.drawable.factura, R.drawable.enviar)
 
 

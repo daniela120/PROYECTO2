@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.359" />
 
     <Spinner
-        android:id="@+id/spinner_N2"
+        android:id="@+id/spinner_menusPe"
         android:layout_width="123dp"
         android:layout_height="36dp"
         android:layout_gravity="center"
@@ -34,22 +34,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4" />
-
-    <EditText
-        android:id="@+id/txt_Nombre"
-        android:layout_width="292dp"
-        android:layout_height="54dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="CLIENTE"
-        android:inputType="number"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
 
     <EditText
         android:id="@+id/txt_Total"
@@ -68,7 +52,7 @@
         app:layout_constraintVertical_bias="0.746" />
 
     <EditText
-        android:id="@+id/txt_NEmpleado"
+        android:id="@+id/txt_EmpleadoFa"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -81,6 +65,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.631" />
+
+    <EditText
+        android:id="@+id/txt_Clientefa"
+        android:layout_width="299dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="CLIENTE"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.514" />
 
     <EditText
         android:id="@+id/txt_CodigoPedido"
@@ -139,7 +138,7 @@
         app:srcCompat="@drawable/logoy" />
 
     <Button
-        android:id="@+id/btn_guardarMenu"
+        android:id="@+id/btn_GuardarFa"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -147,13 +146,27 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.914" />
 
     <Button
-        android:id="@+id/btn_regresar2"
+        android:id="@+id/btn_enviarFactura"
+        android:layout_width="76dp"
+        android:layout_height="64dp"
+        android:background="@color/yellow4"
+        android:foreground="@android:drawable/ic_menu_send"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
+
+    <Button
+        android:id="@+id/btn_regresar7"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -161,7 +174,7 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.914" />

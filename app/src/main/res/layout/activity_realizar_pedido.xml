@@ -6,107 +6,107 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txv_Puesto"
+        android:id="@+id/txv_Pago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PUESTO"
+        android:text="MENUS"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.622" />
 
     <Spinner
-        android:id="@+id/spinner_PuestoEmpleado"
-        android:layout_width="298dp"
-        android:layout_height="40dp"
+        android:id="@+id/spinner_menusPe"
+        android:layout_width="295dp"
+        android:layout_height="39dp"
         android:layout_gravity="center"
         android:background="@color/gray1"
-        android:hint="PUESTO"
+        android:hint="MENUS"
         android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <EditText
-        android:id="@+id/txt_NombreEmpleado"
-        android:layout_width="299dp"
-        android:layout_height="49dp"
+        android:id="@+id/txt_ClientePe"
+        android:layout_width="292dp"
+        android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="NOMBRE"
+        android:hint="CLIENTE"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.407" />
 
     <EditText
-        android:id="@+id/txt_CodigoEmpleado"
-        android:layout_width="299dp"
-        android:layout_height="49dp"
+        android:id="@+id/txt_EmpleadoPe"
+        android:layout_width="292dp"
+        android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="CODIGO"
+        android:hint="EMPLEADO"
         android:inputType="number"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.537" />
 
     <TextView
         android:id="@+id/txvtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EMPLEADO"
+        android:text="PEDIDO"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white2"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.381"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.251" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="295dp"
-        android:layout_height="131dp"
+        android:layout_width="153dp"
+        android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.207"
+        app:srcCompat="@drawable/pedidox" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="267dp"
+        android:layout_height="174dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logoy" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="100dp"
-        android:layout_height="79dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223"
-        app:srcCompat="@drawable/empleado" />
-
     <Button
-        android:id="@+id/btn_GuardarEmpleado"
+        android:id="@+id/btn_GuardarPedido"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -114,10 +114,10 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.953" />
 
     <Button
         android:id="@+id/btn_regresar7"
@@ -128,9 +128,9 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.953" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
