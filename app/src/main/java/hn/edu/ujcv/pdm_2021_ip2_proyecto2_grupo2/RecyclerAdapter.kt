@@ -8,6 +8,7 @@ import  android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
 import androidx.recyclerview.widget.RecyclerView
 
+
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private val titles = arrayOf("Registrar Cliente", "Registrar Menu", "Registrar Mesa",

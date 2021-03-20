@@ -3,8 +3,8 @@
     <style name="Theme.PDM_2021_IP2_PROYECTO2_GRUPO2" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/yellow4</item>
-        <item name="colorPrimaryVariant">@color/green1</item>
-        <item name="colorOnPrimary">@color/gray1</item>
+        <item name="colorPrimaryVariant">@color/gray1</item>
+        <item name="colorOnPrimary">@color/green1</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green1</item>
         <item name="colorSecondaryVariant">@color/green5</item>
