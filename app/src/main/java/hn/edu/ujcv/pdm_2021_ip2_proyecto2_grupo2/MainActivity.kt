@@ -7,7 +7,6 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,15 +14,15 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerAdapter = RecyclerAdapter()
+    private var adapter:RecyclerView.Adapter<RecyclerAdapter.ViewHolder>?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        collapsing_toolbar.title = "La Cocina de Mexico"
-        collapsing_toolbar.setContentScrimColor(Color.BLUE)
+        collapsing_toolbar.title = "LA COCINA DE MEXICO"
+        collapsing_toolbar.setContentScrimColor(Color.BLACK)
 
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager

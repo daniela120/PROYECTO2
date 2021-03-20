@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valoresPuesto">
+        <item>Recepcionista</item>
+        <item>Gerente</item>
+        <item>Cocinero</item>
+        <item>Mesero</item>
+        <item>Cajero</item>
+        <item>Personal de limpieza</item>
+        <item>Auxiliar de cocina</item>
+        <item>Chef</item>
+    </string-array>
+
+
+
+
+</resources>

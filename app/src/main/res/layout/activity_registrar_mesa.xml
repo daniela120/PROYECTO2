@@ -6,81 +6,79 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/txt_NomCliente"
+        android:id="@+id/txt_NombreEmpleado"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="NOMBRE"
+        android:hint="DESCRIPCION"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <EditText
-        android:id="@+id/txt_IdCliente"
-        android:layout_width="299dp"
-        android:layout_height="49dp"
+        android:id="@+id/txt_CodigoEmpleado"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="IDENTIDAD"
+        android:hint="CODIGO"
         android:inputType="number"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
-
-    <EditText
-        android:id="@+id/txt_CorreoCliente"
-        android:layout_width="299dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="CORREO"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@color/black2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.439" />
 
     <TextView
         android:id="@+id/txvtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CLIENTE"
+        android:text="MESA"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white2"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="239dp"
+        android:layout_width="153dp"
+        android:layout_height="95dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196"
+        app:srcCompat="@drawable/mesa" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="267dp"
         android:layout_height="174dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logoy" />
 
     <Button
-        android:id="@+id/btn_guardarC"
+        android:id="@+id/btn_guardarEmpleado"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -88,13 +86,13 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.914" />
 
     <Button
-        android:id="@+id/btn_regresar1"
+        android:id="@+id/btn_regresar4"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -102,9 +100,9 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.914" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
