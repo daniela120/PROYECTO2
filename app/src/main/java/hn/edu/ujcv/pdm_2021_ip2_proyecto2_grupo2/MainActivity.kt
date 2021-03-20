@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        collapsing_toolbar.title = "La Cocina de Mexico"
+        collapsing_toolbar.title = "LA COCINA DE MEXICO"
         collapsing_toolbar.setContentScrimColor(Color.BLACK)
 
         layoutManager = LinearLayoutManager(this)
