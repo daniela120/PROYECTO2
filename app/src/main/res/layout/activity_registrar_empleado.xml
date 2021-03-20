@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.725" />
 
     <EditText
-        android:id="@+id/txt_NombreEmpleado"
+        android:id="@+id/txt_Nombre"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.549" />
 
     <EditText
-        android:id="@+id/txt_CodigoEmpleado"
+        android:id="@+id/txt_CodigoMenu"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -87,10 +87,10 @@
         android:layout_height="131dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logoy" />
 
     <ImageView
@@ -106,7 +106,7 @@
         app:srcCompat="@drawable/empleado" />
 
     <Button
-        android:id="@+id/btn_guardarEmpleado"
+        android:id="@+id/btn_guardarMenu"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"
@@ -120,7 +120,7 @@
         app:layout_constraintVertical_bias="0.897" />
 
     <Button
-        android:id="@+id/btn_regresar4"
+        android:id="@+id/btn_regresar2"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:background="@color/yellow4"

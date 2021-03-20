@@ -14,18 +14,18 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private val titles = arrayOf("Registrar Cliente", "Registrar Menu", "Registrar Mesa",
-        "Registrar Empleado", "Realizar Pedido",
-        "Realizar Factura", "Enviar por correo")
+            "Registrar Empleado", "Realizar Pedido",
+            "Realizar Factura", "Enviar por correo")
 
     private val details = arrayOf( "Registrar un Cliente", "Registrar un Menu", "Registrar una Mesa",
-        "Registrar un Empleado", "Realizar un Pedido",
-        "Realizar una  Factura", "Enviar Factura por correo")
+            "Registrar un Empleado", "Realizar un Pedido",
+            "Realizar una  Factura", "Enviar Factura por correo")
 
     private val images = intArrayOf(
-        R.drawable.registro_cliente,
-        R.drawable.registrar_menu, R.drawable.mesa,
-        R.drawable.empleado, R.drawable.pedido,
-        R.drawable.factura, R.drawable.enviar)
+            R.drawable.registro_cliente,
+            R.drawable.registrar_menu, R.drawable.mesa,
+            R.drawable.empleado, R.drawable.pedido,
+            R.drawable.factura, R.drawable.enviar)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v =LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout, viewGroup, false)
@@ -36,7 +36,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetail: TextView
-        
+
         init {
             itemImage=itemView.findViewById(R.id.item_image)
             itemTitle=itemView.findViewById(R.id.item_title)
@@ -49,8 +49,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 when(position){
                     0 -> GoRegistrarCliente(itemView)
                     1 -> GoRegistrarMenu(itemView)
-                    2 -> GoRegistrarMesa(itemView)
-                    3 -> GoRegistrarEmpleado(itemView)
                     else->GoMain(itemView)
 
                 }
@@ -71,16 +69,9 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val intent = Intent(itemView.context, MainActivity::class.java)
         itemView.context.startActivity(intent)
     }
-    fun GoRegistrarMesa(itemView: View) {
-        val intent = Intent(itemView.context, MainActivity::class.java)
-        itemView.context.startActivity(intent)
-    }
+
     fun GoRegistrarCliente(itemView: View) {
         val intent = Intent(itemView.context, RegistrarCliente ::class.java)
-        itemView.context.startActivity(intent)
-    }
-    fun GoRegistrarEmpleado(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarEmpleado ::class.java)
         itemView.context.startActivity(intent)
     }
 
@@ -95,3 +86,4 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         return titles.size
     }
 }
+
