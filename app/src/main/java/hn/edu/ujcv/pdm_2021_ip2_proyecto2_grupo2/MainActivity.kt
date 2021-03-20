@@ -1,17 +1,14 @@
 package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
-import android.graphics.Color
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.activity_main.*
+import android.graphics.Color
 
 class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -22,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        collapsing_toolbar.title = "La Cocina de Mexico"
-        collapsing_toolbar.setContentScrimColor(Color.BLUE)
+        collapsing_toolbar.title = "LA COCINA DE MEXICO"
+        collapsing_toolbar.setContentScrimColor(Color.BLACK)
 
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter=adapter
-    }
+        }
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
