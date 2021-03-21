@@ -15,7 +15,8 @@ class RegistrarMesa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_mesa)
-        btn_regresar3.setOnClickListener { regresar() }
+        btn_regresar3.setOnClickListener {
+            regresar() }
         btn_GuardarMesa.setOnClickListener { guardar() }
     }
 
