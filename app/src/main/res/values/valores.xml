@@ -21,28 +21,6 @@
         <item>Torta Jumbo</item>
         <item>Mexican Burger</item>
     </string-array>
-
-    <string-array name="valoresDescripcionMenu">
-        <item>Tacos Jumbo</item>
-        <item>Nachos Familiar</item>
-        <item>Burritos Jr</item>
-        <item>Tacos Jr.</item>
-        <item>Chile Relleno</item>
-        <item>Chilaquiles Familiar</item>
-        <item>Torta Jumbo</item>
-        <item>Mexican Burger</item>
-    </string-array>
-
-    <float-array name="valoresPrecioMenu">
-        <item>180.00</item>
-        <item>150.00</item>
-        <item>230.00</item>
-        <item>160.00</item>
-        <item>99.00</item>
-        <item>250.00</item>
-        <item>140.00</item>
-        <item>95.00</item>
-    </float-array>
-
+    
 
 </resources>
