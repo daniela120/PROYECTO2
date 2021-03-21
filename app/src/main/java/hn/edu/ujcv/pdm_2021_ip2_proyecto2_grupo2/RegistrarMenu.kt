@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_menu.*
+import kotlinx.android.synthetic.main.fragment_first.*
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
 import java.util.*
@@ -23,7 +24,7 @@ class RegistrarMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_menu)
-
+        mostrar()
         btn_GuardarMenu.setOnClickListener {
             guardar()
         }
@@ -64,30 +65,87 @@ class RegistrarMenu : AppCompatActivity() {
 
         if (txt_CodigoMenu.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese el codigo del menu", Toast.LENGTH_SHORT).show()
-        } else {
-            if (txt_NombreMenu.text.toString().isEmpty()) {
-                Toast.makeText(this, "Ingrese un Nombre de menu", Toast.LENGTH_SHORT).show()
-            } else {
-                if (txt_DescripcionMenu.text.toString().isEmpty()) {
-                    Toast.makeText(this, "Ingrese una descripcion", Toast.LENGTH_SHORT).show()
-                } else {
-                    if (txt_PrecioMenu.text.toString().isEmpty()) {
-                        Toast.makeText(this, "Ingrese el precio del menu", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, "Menu Registrado", Toast.LENGTH_SHORT).show()
                         val parametro = StringBuilder()
                         num += 1
                         parametro.append("DATOS MENU").append("|")
                         parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-                        parametro.append(txt_NombreMenu.text.toString().trim()).append("|")
-                        parametro.append(txt_DescripcionMenu.text.toString().trim()).append("|")
-                        parametro.append(txt_PrecioMenu.text.toString().trim()).append("|")
+                        parametro.append(txvDescripcionMenu.text.toString().trim()).append("|")
+                        parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
+                        parametro.append(txvPrecioMenu.text.toString().trim()).append("|")
                         datos_Menu.put(num, parametro.toString())
                         println(datos_Menu.toString())
                     }
                 }
-            }
+
+    fun mostrar() {
+        var position: Int = spinner_NombreMenu.selectedItemPosition
+        println(position.toString())
+        when (position) {
+            0 -> op1()
+            1 -> op2()
+            2 -> op3()
+            3 -> op4()
+            4 -> op5()
+            5 -> op6()
+            6 -> op7()
         }
+    }
+
+    fun op1(){
+        var des="4 Tacos, 2 refrescos"
+        var pre = 90
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op2(){
+        var des="4 nachos, 4 refrescos"
+        var pre = 400
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op3(){
+        var des="2 burritos, 1 refresco"
+        var pre = 150
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+    fun op4(){
+        var des="2 tacos, 1 refresco"
+        var pre = 180
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op5(){
+        var des="4 chiles rellenos, 1 refresco"
+        var pre = 450
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op6(){
+        var des="4 chilaquiles, 4 refresco"
+        var pre = 560
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op7(){
+        var des="1 Torta, 1 refresco"
+        var pre = 200
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
+    }
+
+    fun op8(){
+        var des="1 Mexican Burger, 1 refresco"
+        var pre = 230
+        txvDescripcionMenu.text= des
+        txvPrecioMenu.text = pre.toString()
     }
 
     fun regresar() {
