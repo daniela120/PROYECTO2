@@ -18,6 +18,8 @@ import java.util.*
 import kotlin.collections.HashMap
 
 class RegistrarMenu : AppCompatActivity() {
+    private var des:String=""
+    private var pre:String=""
     var datos_Menu: HashMap<Int, String> = hashMapOf()
     var num = 0
     var listItem = ArrayList<String>()
@@ -26,7 +28,7 @@ class RegistrarMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_menu)
-        mostrar()
+
         btn_GuardarMenu.setOnClickListener {
             guardar()
         }
@@ -94,74 +96,7 @@ class RegistrarMenu : AppCompatActivity() {
                     }
                 }
 
-    fun mostrar() {
-        var position: Int = spinner_NombreMenu.selectedItemPosition
-        println(position.toString())
-        when (position) {
-            0 -> op1()
-            1 -> op2()
-            2 -> op3()
-            3 -> op4()
-            4 -> op5()
-            5 -> op6()
-            6 -> op7()
-        }
-    }
 
-    fun op1(){
-        var des="4 Tacos, 2 refrescos"
-        var pre = 90
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op2(){
-        var des="4 nachos, 4 refrescos"
-        var pre = 400
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op3(){
-        var des="2 burritos, 1 refresco"
-        var pre = 150
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-    fun op4(){
-        var des="2 tacos, 1 refresco"
-        var pre = 180
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op5(){
-        var des="4 chiles rellenos, 1 refresco"
-        var pre = 450
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op6(){
-        var des="4 chilaquiles, 4 refresco"
-        var pre = 560
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op7(){
-        var des="1 Torta, 1 refresco"
-        var pre = 200
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
-
-    fun op8(){
-        var des="1 Mexican Burger, 1 refresco"
-        var pre = 230
-        txvDescripcionMenu.text= des
-        txvPrecioMenu.text = pre.toString()
-    }
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
