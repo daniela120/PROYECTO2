@@ -3,7 +3,9 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -35,6 +37,19 @@ class RegistrarMenu : AppCompatActivity() {
             addListItem()
             Snackbar.make(view, "Item agregado a la lista", Snackbar.LENGTH_LONG)
                     .setAction("Deshacer", deshacerOnclickListener).show()
+        }
+        val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
+        val lista_Menus = resources.getStringArray(R.array.valoresMenu)
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Menus)
+
+        spinner_Menus.adapter =adaptador
+        spinner_Menus.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+            }
         }
     }
 
@@ -73,7 +88,7 @@ class RegistrarMenu : AppCompatActivity() {
                         parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
                         parametro.append(txvDescripcionMenu.text.toString().trim()).append("|")
                         parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
-                        parametro.append(txvPrecioMenu.text.toString().trim()).append("|")
+                        parametro.append(txvPrecioMenu.toString().trim()).append("|")
                         datos_Menu.put(num, parametro.toString())
                         println(datos_Menu.toString())
                     }
