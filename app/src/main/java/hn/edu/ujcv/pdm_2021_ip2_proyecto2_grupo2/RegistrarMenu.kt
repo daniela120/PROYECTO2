@@ -2,14 +2,23 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import java.lang.StringBuilder
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 class RegistrarMenu : AppCompatActivity() {
     var datos_Menu: HashMap<Int, String> = hashMapOf()
     var num = 0
+    var listItem = ArrayList<String>()
+    var adapter: ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +30,34 @@ class RegistrarMenu : AppCompatActivity() {
         btn_regresarMenu.setOnClickListener {
             regresar()
         }
+        btn_GuardarMenu.setOnClickListener { view ->
+            addListItem()
+            Snackbar.make(view, "Item agregado a la lista", Snackbar.LENGTH_LONG)
+                    .setAction("Deshacer", deshacerOnclickListener).show()
+        }
+    }
 
+
+    var deshacerOnclickListener: View.OnClickListener = View.OnClickListener { view ->
+        listItem.removeAt(listItem.size -1)
+        adapter?.notifyDataSetChanged()
+        Snackbar.make(view, "Item Eliminado", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+    }
+
+    private fun addListItem() {
+        val dateFormat: SimpleDateFormat =
+                SimpleDateFormat( "HH:mm:ss dd/MM/yyyy", Locale.US)
+        listItem.add(dateFormat.format(Date()))
+        adapter?.notifyDataSetChanged()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter = ArrayAdapter(this,
+                android.R.layout.simple_list_item_1,
+                listItem)
+        lstView.adapter = adapter
     }
 
     private fun guardar() {
