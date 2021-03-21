@@ -54,8 +54,8 @@
 
     <EditText
         android:id="@+id/txt_CodigoMenu"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="194dp"
+        android:layout_height="46dp"
         android:ems="10"
         android:gravity="center"
         android:hint="CODIGO"
@@ -64,10 +64,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.732"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <TextView
         android:id="@+id/txvtitulo"
@@ -121,6 +121,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.914" />
+
+    <Button
+        android:id="@+id/btn_VerMenus"
+        android:layout_width="76dp"
+        android:layout_height="64dp"
+        android:background="@color/yellow4"
+        android:foreground="@android:drawable/ic_menu_view"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
 
     <Button
         android:id="@+id/btn_regresar7"

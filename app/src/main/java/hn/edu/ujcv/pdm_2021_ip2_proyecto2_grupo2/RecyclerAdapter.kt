@@ -92,17 +92,17 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         itemView.context.startActivity(intent)
     }
     fun GoRealizarFactura(itemView: View) {
-        val intent = Intent(itemView.context,MainActivity::class.java)
+        val intent = Intent(itemView.context, RealizarFactura::class.java)
         itemView.context.startActivity(intent)
     }
 
     fun GoRealizarPedido(itemView: View) {
-        val intent = Intent(itemView.context, MainActivity ::class.java)
+        val intent = Intent(itemView.context, RealizarPedido ::class.java)
         itemView.context.startActivity(intent)
     }
 
     fun GoEviarFactura(itemView: View) {
-        val intent = Intent(itemView.context, MainActivity ::class.java)
+        val intent = Intent(itemView.context, EnviarFactura ::class.java)
         itemView.context.startActivity(intent)
     }
 
