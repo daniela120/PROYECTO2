@@ -14,8 +14,11 @@ class RegistrarCliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_cliente)
-        btn_regresar1.setOnClickListener { regresar() }
-        btn_guardarCliente.setOnClickListener { guardar() }
+        btn_regresar1.setOnClickListener {
+            regresar() }
+        btn_guardarCliente.setOnClickListener {
+            guardar() }
+
 
     }
 
