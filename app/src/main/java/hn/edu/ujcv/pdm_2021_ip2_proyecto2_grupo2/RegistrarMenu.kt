@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import java.lang.StringBuilder
 
@@ -19,7 +18,7 @@ class RegistrarMenu : AppCompatActivity() {
         btn_GuardarMenu.setOnClickListener {
             guardar()
         }
-        btn_regresar7.setOnClickListener {
+        btn_regresarMenu.setOnClickListener {
             regresar()
         }
 
