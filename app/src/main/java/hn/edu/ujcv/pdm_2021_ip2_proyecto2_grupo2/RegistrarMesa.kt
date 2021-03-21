@@ -21,10 +21,10 @@ class RegistrarMesa : AppCompatActivity() {
 
     private  fun guardar() {
 
-        if (txt_IdCliente.text.toString().isEmpty()) {
+        if (txt_CodigoMesa.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese el Codigo de la Mesa", Toast.LENGTH_SHORT).show()
         }else {
-            if (txt_NomCliente.text.toString().isEmpty()) {
+            if (txt_DescripcionMesa.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese la Descripcion de la Mesa", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(this, "Mesa Registrada", Toast.LENGTH_SHORT).show()
