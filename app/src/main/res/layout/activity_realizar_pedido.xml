@@ -8,7 +8,7 @@
     <Spinner
         android:id="@+id/spinner_TipoPago"
         android:layout_width="292dp"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="MENUS"
         android:padding="20dp"
