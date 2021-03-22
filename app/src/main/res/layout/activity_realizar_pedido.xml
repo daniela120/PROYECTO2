@@ -23,7 +23,7 @@
         android:layout_width="295dp"
         android:layout_height="39dp"
         android:layout_gravity="center"
-        android:background="@color/gray1"
+        android:background="@color/black3"
         android:hint="MENUS"
         android:padding="20dp"
         android:textAlignment="center"
