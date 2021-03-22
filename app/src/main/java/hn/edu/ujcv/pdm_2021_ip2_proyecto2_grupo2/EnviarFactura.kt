@@ -33,6 +33,7 @@ class EnviarFactura : AppCompatActivity() {
         obtenerEmpleado()
         obtenerPedido()
         obtenerFactura()
+        iniciar()
 
 
     }
@@ -57,7 +58,7 @@ class EnviarFactura : AppCompatActivity() {
 
 
     private fun enviar(){
-        var to = arrayOf<String>(txt_CorreoDestino.text.toString(), "helen.orellana1@ujcv.edu.hn","miguel.torres@ujcv.edu.hn","Daniela.herrera@ujcv.edu.hn","edwin.espino@ujcv.edu.hn")
+        var to = arrayOf<String>(txt_CorreoDestino.text.toString())
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL,to)
         intent.putExtra(Intent.EXTRA_SUBJECT, txt_Asunto.text.toString())
@@ -117,6 +118,29 @@ class EnviarFactura : AppCompatActivity() {
         val intent = intent
         datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
         println("La factura es: "+datos_factura.toString())
+    }
+
+    fun iniciar(){
+        var b=""
+        var c=""
+
+        for(j in datos_factura){
+            val data1 = j.toString().split("|").toTypedArray()
+            c=data1[1].toString()
+
+
+
+        }
+        for(i in datos_cliente){
+            val data1 = i.toString().split("|").toTypedArray()
+            b=data1[3].toString()
+
+
+
+        }
+        txt_CorreoDestino.setText(b)
+        txt_CodigoFac.setText(c)
+
     }
 
 }
