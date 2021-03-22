@@ -58,10 +58,10 @@ class RegistrarEmpleado : AppCompatActivity() {
                 } else {
                     val parametro = StringBuilder()
                     num += 1
-                    parametro.append("DATOS EMPLEADO").append("|")
-                    parametro.append(txt_CodigoEmpleado.text.toString().trim()).append("|")
+                    parametro.append("\n DATOS EMPLEADO").append("\n ")
+                    parametro.append(txt_CodigoEmpleado.text.toString().trim()).append("\n ")
                     parametro.append(txt_NombreEmpleado.text.toString().trim()).append("|")
-                    parametro.append(spinner_PuestoEmpleado.selectedItem.toString().trim()).append("|")
+                    parametro.append(spinner_PuestoEmpleado.selectedItem.toString().trim()).append("\n ")
                     datos_empleado.put(num, parametro.toString())
                     println(datos_empleado.toString())
                     Toast.makeText(this, "Empleado  Registrado", Toast.LENGTH_SHORT).show()
