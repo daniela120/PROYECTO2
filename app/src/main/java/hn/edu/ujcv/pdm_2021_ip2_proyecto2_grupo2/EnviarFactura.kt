@@ -15,6 +15,10 @@ class EnviarFactura : AppCompatActivity() {
     var datos_empleado: HashMap<Int, String> = hashMapOf()
     var datos_pedido: HashMap<Int, String> = hashMapOf()
     var datos_factura: HashMap<Int, String> = hashMapOf()
+    var pedidos=""
+    var des=""
+    var mesa=""
+    var mesad=""
 
 
 
@@ -82,7 +86,7 @@ class EnviarFactura : AppCompatActivity() {
 
 
         }
-        var facturafinal = "____LA COCINA DE MEXICO____"+"\nDATOS DE LA FACTURA"+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
+        var facturafinal = "______LA COCINA DE MEXICO_______"+"\n.........DATOS DE LA FACTURA.........."+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+ "\nTIPO DE MENU: "+pedidos+"\nDESCRIPCION DEL MENU: "+des+"\nNo. MESA: "+mesa+" DESCRIPCION DE LA MESA: "+mesad+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
         intent.putExtra(Intent.EXTRA_TEXT, facturafinal)
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))
@@ -98,6 +102,37 @@ class EnviarFactura : AppCompatActivity() {
 
         }
         txt_CodigoFac.setText(a.toString())
+        var com=""
+
+
+        for(da in datos_menu) {
+
+
+            for (ju in datos_pedido) {
+                val data2 = ju.toString().split("|").toTypedArray()
+                com = data2[3].toString()
+            }
+
+
+            val data3 = da.toString().split("|").toTypedArray()
+            if (com == data3[2]) {
+                pedidos = data3[2].toString()
+                des = data3[3].toString()
+
+                println("SI SE CUMPLIO"  + pedidos.toString())
+            }
+
+
+        }
+
+        for(i in datos_mesa){
+            val data1 = i.toString().split("|").toTypedArray()
+            mesa=data1[1].toString()
+            mesad=data1[2].toString()
+
+
+
+        }
     }
 
 
