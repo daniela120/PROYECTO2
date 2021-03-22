@@ -42,9 +42,9 @@ class RegistrarMesa : AppCompatActivity() {
                 Toast.makeText(this, "Mesa Registrada", Toast.LENGTH_SHORT).show()
                 val parametro = StringBuilder()
                 num += 1
-                parametro.append("DATOS MESA").append("\n")
-                parametro.append(txt_CodigoMesa.text.toString().trim()).append("\n")
-                parametro.append(txt_DescripcionMesa.text.toString().trim()).append("\n")
+                parametro.append("DATOS MESA").append("| ")
+                parametro.append(txt_CodigoMesa.text.toString().trim()).append("| ")
+                parametro.append(txt_DescripcionMesa.text.toString().trim()).append("| ")
                 datos_mesa.put(num,parametro.toString())
                 println(datos_mesa.toString())
             }

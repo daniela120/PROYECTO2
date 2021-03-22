@@ -62,10 +62,10 @@ class RealizarPedido : AppCompatActivity() {
             var num = 0
             val parametro = StringBuilder()
             num += 1
-            parametro.append("DATOS DEL PEDIDO").append("\n")
-            parametro.append(txt_ClientePe.text.toString().trim()).append("\n")
-            parametro.append(txt_EmpleadoPe.text.toString().trim()).append("\n")
-            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("\n")
+            parametro.append("DATOS DEL PEDIDO").append("|")
+            parametro.append(txt_ClientePe.text.toString().trim()).append("|")
+            parametro.append(txt_EmpleadoPe.text.toString().trim()).append("|")
+            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
             datos_pedido.put(num, parametro.toString())
             println(datos_pedido.toString())
 

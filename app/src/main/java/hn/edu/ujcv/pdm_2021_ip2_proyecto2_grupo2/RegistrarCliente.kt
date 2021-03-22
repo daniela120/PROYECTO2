@@ -59,9 +59,9 @@ class RegistrarCliente : AppCompatActivity() {
                     val parametro = StringBuilder()
                     num += 1
                     parametro.append("DATOS CLIENTES").append("\n")
-                    parametro.append(txt_IdCliente.text.toString().trim()).append("\n")
-                    parametro.append(txt_NomCliente.text.toString().trim()).append("\n")
-                    parametro.append(txt_CorreoCliente.text.toString().trim()).append("\n")
+                    parametro.append(txt_IdCliente.text.toString().trim()).append("|")
+                    parametro.append(txt_NomCliente.text.toString().trim()).append("|")
+                    parametro.append(txt_CorreoCliente.text.toString().trim()).append("|")
                     datos_cliente.put(num,parametro.toString())
                     println(datos_cliente.toString())
                 }

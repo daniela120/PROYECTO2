@@ -78,13 +78,12 @@ class RealizarFactura : AppCompatActivity() {
                         } else {
                             val parametro = StringBuilder()
                             num += 1
-                            parametro.append("\n DATOS FACTURA").append("\n" +
-                                    " Codigo ")
-                            parametro.append(txt_CodigoPedido.text.toString().trim()).append("\n Combo")
-                            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("\n Cliente")
-                            parametro.append(txt_Clientefa.text.toString().trim()).append("\n Empleado ")
-                            parametro.append(txt_EmpleadoFa.text.toString().trim()).append("\n  Total ")
-                            parametro.append(txt_Total.text.toString().trim()).append("\n  ")
+                            parametro.append("\n DATOS FACTURA").append("|")
+                            parametro.append(txt_CodigoPedido.text.toString().trim()).append("|")
+                            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
+                            parametro.append(txt_Clientefa.text.toString().trim()).append("|")
+                            parametro.append(txt_EmpleadoFa.text.toString().trim()).append("|")
+                            parametro.append(txt_Total.text.toString().trim()).append("|")
                             datos_factura.put(num, parametro.toString())
                             println(datos_factura.toString())
                             Toast.makeText(this, "Factura Realizada", Toast.LENGTH_SHORT).show()
