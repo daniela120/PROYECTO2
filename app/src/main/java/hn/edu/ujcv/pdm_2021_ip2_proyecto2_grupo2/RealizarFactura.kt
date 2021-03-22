@@ -104,6 +104,7 @@ class RealizarFactura : AppCompatActivity() {
         intent.putExtra("status-p","true")
         intent.putExtra("Factura", datos_factura)
         intent.putExtra("status-f","true")
+
         startActivity(intent)
     }
 

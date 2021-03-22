@@ -3,9 +3,7 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -13,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import java.lang.StringBuilder
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -153,7 +150,7 @@ class RegistrarMenu : AppCompatActivity() {
         adapter = ArrayAdapter(this,
                 android.R.layout.simple_list_item_1,
                 listItem)
-        lstView.adapter = adapter
+        lstView2.adapter = adapter
     }
 
     private fun guardar() {

@@ -2,10 +2,16 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_registrar_cliente.*
+import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import java.lang.StringBuilder
+import java.util.ArrayList
+import java.util.*
 
 class RegistrarCliente : AppCompatActivity() {
     var datos_cliente: HashMap<Int, String> = hashMapOf()
@@ -14,7 +20,9 @@ class RegistrarCliente : AppCompatActivity() {
     var datos_empleado: HashMap<Int, String> = hashMapOf()
     var datos_pedido: HashMap<Int, String> = hashMapOf()
     var datos_factura: HashMap<Int, String> = hashMapOf()
-
+    var listItem = ArrayList<String>()
+    var adapter: ArrayAdapter<String>? = null
+    var stado:Boolean=false
     var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +30,9 @@ class RegistrarCliente : AppCompatActivity() {
         setContentView(R.layout.activity_registrar_cliente)
         btn_regresar1.setOnClickListener {
             regresar() }
-        btn_guardarCliente.setOnClickListener {
-            guardar() }
+        btn_guardarCliente.setOnClickListener { view ->
+            guardar()
+          }
         obtenerMenu()
         obtenerMesa()
         obtenerEmpleado()
@@ -59,6 +68,7 @@ class RegistrarCliente : AppCompatActivity() {
             }
         }
     }
+
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
