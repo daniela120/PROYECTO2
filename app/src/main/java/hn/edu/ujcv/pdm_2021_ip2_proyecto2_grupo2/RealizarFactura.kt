@@ -141,7 +141,7 @@ class RealizarFactura : AppCompatActivity() {
         var b=""
         var c=0
         for(data in datos_pedido){
-            val data1 = data.toString().split("\n").toTypedArray()
+            val data1 = data.toString().split("|").toTypedArray()
             a=data1[1].toString()
             b=data1[2].toString()
 
@@ -152,32 +152,28 @@ class RealizarFactura : AppCompatActivity() {
         var com:String=""
         var com2:String=""
 
-        for (da in datos_menu){
-            for(ju in datos_pedido){
-                val data2 = ju.toString().split("\n").toTypedArray()
-                com=data2[3].toString()
+        for(da in datos_menu) {
+
+
+            for (ju in datos_pedido) {
+                val data2 = ju.toString().split("|").toTypedArray()
+                com = data2[3].toString()
             }
 
-            for(p in datos_menu){
-                val data3= p.toString().split("\n Nombre del Menu ").toTypedArray()
-                com2=data3[1].toString()
-            }
 
-            println("ESTO ES"+com)
-            println("GOLA"+com2)
+            val data3 = da.toString().split("|").toTypedArray()
+            if (com == data3[2]) {
 
-
-
-            if(com==com2){
-                val data2 = da.toString().split("\n Precio  ").toTypedArray()
-                c=data2[1].toInt()
+                c = data3[4].toInt()
                 println("SI SE CUMPLIO")
-
             }
+
+
         }
+
+
         txt_Total.setText(c.toString())
-        println(datos_pedido[3].toString())
-        println(datos_menu[1].toString())
+
     }
 
 
