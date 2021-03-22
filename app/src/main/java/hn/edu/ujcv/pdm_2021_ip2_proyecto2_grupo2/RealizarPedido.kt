@@ -56,7 +56,7 @@ class RealizarPedido : AppCompatActivity() {
 
 
     fun guardar() {
-        if (spinner_PuestoEmpleado.selectedItem.toString().isEmpty()) {
+        if (spinner_TipoPago.selectedItem.toString().isEmpty()) {
             Toast.makeText(this, "No Seleciono ninguno", Toast.LENGTH_SHORT).show()
         } else {
             var num = 0
@@ -131,7 +131,7 @@ class RealizarPedido : AppCompatActivity() {
 
 
         for(data in datos_cliente){
-            val data1 = data.toString().split("\n").toTypedArray()
+            val data1 = data.toString().split("|").toTypedArray()
             a=data1[2].toString()
 
 
@@ -139,7 +139,7 @@ class RealizarPedido : AppCompatActivity() {
         txt_ClientePe.setText(a)
 
         for(d in datos_empleado){
-            val data1 = d.toString().split("\n ").toTypedArray()
+            val data1 = d.toString().split("|").toTypedArray()
             b=data1[2].toString()
 
 

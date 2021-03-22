@@ -71,7 +71,6 @@ class EnviarFactura : AppCompatActivity() {
 
         for(d in datos_factura){
             val data1 = d.toString().split("|").toTypedArray()
-            a=data1[0].toString()
             b=data1[1].toString()
             c=data1[2].toString()
             de=data1[3].toString()
@@ -80,7 +79,7 @@ class EnviarFactura : AppCompatActivity() {
 
 
         }
-        var facturafinal = a+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
+        var facturafinal = "DATOS DE LA FACTURA"+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
         intent.putExtra(Intent.EXTRA_TEXT, facturafinal)
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))

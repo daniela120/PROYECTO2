@@ -168,7 +168,6 @@ class RealizarFactura : AppCompatActivity() {
 
             val data3 = da.toString().split("|").toTypedArray()
             if (com == data3[2]) {
-
                 c = data3[4].toInt()
                 d= data3[3].toString()
                 println("SI SE CUMPLIO")
@@ -191,7 +190,6 @@ class RealizarFactura : AppCompatActivity() {
         intent.putExtra("Empleado", datos_empleado)
         intent.putExtra("Pedido", datos_pedido)
         intent.putExtra("Factura", datos_factura)
-
         startActivity(intent)
     }
 
