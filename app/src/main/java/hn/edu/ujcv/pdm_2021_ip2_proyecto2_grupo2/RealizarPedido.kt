@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isEmpty
 import kotlinx.android.synthetic.main.activity_realizar_pedido.*
 import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_empleado.*
@@ -56,7 +57,7 @@ class RealizarPedido : AppCompatActivity() {
 
 
     fun guardar() {
-        if (spinner_TipoPago.selectedItem.toString().isEmpty()) {
+        if (spinner_TipoPago.isEmpty()) {
             Toast.makeText(this, "No Seleciono ninguno", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
