@@ -57,7 +57,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     3 -> GoRegistrarEmpleado(itemView)
                     4 -> GoRealizarPedido(itemView)
                     5 -> GoRealizarFactura(itemView)
-                    6 -> GoEviarFactura(itemView)
+                    6 -> GoEnviarFactura(itemView)
                     else->GoMain(itemView)
 
                 }
@@ -101,7 +101,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         itemView.context.startActivity(intent)
     }
 
-    fun GoEviarFactura(itemView: View) {
+    fun GoEnviarFactura(itemView: View) {
         val intent = Intent(itemView.context, EnviarFactura ::class.java)
         itemView.context.startActivity(intent)
     }
