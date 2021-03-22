@@ -39,6 +39,7 @@ class RegistrarMenu : AppCompatActivity() {
             Snackbar.make(view, "Menu agregado a la lista", Snackbar.LENGTH_LONG)
                     .setAction("Deshacer", deshacerOnclickListener).show()
         }
+        btn_VerMenus.setOnClickListener { mostrar() }
 
         val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
         val lista_Menus = resources.getStringArray(R.array.valoresMenu)
@@ -128,4 +129,10 @@ class RegistrarMenu : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    fun mostrar() {
+        val intent = Intent(this, RecyclerAdapter::class.java)
+        startActivity(intent)
+    }
+
+
 }
