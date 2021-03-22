@@ -227,7 +227,7 @@ class RegistrarMenu : AppCompatActivity() {
 
 
     fun mostrar() {
-        val intent = Intent(this, MainMenu::class.java)
+        val intent = Intent(this, MainActivity2::class.java)
         startActivity(intent)
     }
 

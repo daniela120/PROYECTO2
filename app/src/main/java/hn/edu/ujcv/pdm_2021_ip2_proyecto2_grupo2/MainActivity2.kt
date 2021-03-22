@@ -1,38 +1,31 @@
 package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
-import android.os.Bundle
+
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main2.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.content_menu.*
-import kotlinx.android.synthetic.main.activity_main.*
-import android.graphics.Color
-import kotlinx.android.synthetic.main.menu_main.*
 
-class MainMenu : AppCompatActivity() {
+
+class MainActivity2 : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerAdapterComidas = RecyclerAdapterComidas()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_main)
-        setSupportActionBar(findViewById(R.id.toolbar2))
-
-        collapsing_toolbar2.title = "MENUS"
-        collapsing_toolbar2.setContentScrimColor(Color.BLACK)
+        setContentView(R.layout.activity_main2)
+        collapsing_toolbar2.title = "MENU PRINCIPAL"
+        collapsing_toolbar2.setContentScrimColor(Color.BLUE)
 
         layoutManager = LinearLayoutManager(this)
-        recyclerView2.layoutManager = layoutManager
-        recyclerView2.adapter=adapter
-
-
-
-
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter=adapter
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

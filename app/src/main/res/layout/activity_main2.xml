@@ -5,7 +5,7 @@
     android:id="@+id/CordinatorLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu"
+    tools:context=".MainActivity2"
     tools:ignore="MissingDefaultResource">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -36,7 +36,7 @@
                 android:id="@+id/toolbar2"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="?attr/colorPrimaryVariant"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/Theme.PDM_2021_IP2_PROYECTO2_GRUPO2.PopupOverlay" />
