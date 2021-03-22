@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import java.lang.StringBuilder
 import java.util.ArrayList
+import java.util.*
 
 class RegistrarCliente : AppCompatActivity() {
     var datos_cliente: HashMap<Int, String> = hashMapOf()
@@ -31,10 +32,7 @@ class RegistrarCliente : AppCompatActivity() {
             regresar() }
         btn_guardarCliente.setOnClickListener { view ->
             guardar()
-            if(stado==true){
-                addListItem()
-                Snackbar.make(view, "Menu agregado a la lista", Snackbar.LENGTH_LONG)
-                        .setAction("Deshacer", deshacerOnclickListener).show()}}
+          }
         obtenerMenu()
         obtenerMesa()
         obtenerEmpleado()
@@ -70,25 +68,7 @@ class RegistrarCliente : AppCompatActivity() {
             }
         }
     }
-    var deshacerOnclickListener: View.OnClickListener = View.OnClickListener { view ->
-        listItem.removeAt(listItem.size -1)
-        adapter?.notifyDataSetChanged()
-        Snackbar.make(view, "Menu Eliminado", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-    }
 
-    private fun addListItem() {
-        listItem.add("CLIENTE CREADO"+"\n Codigo"+" "+txt_IdCliente.text.toString()+"\n NOMBRE"+" "+txt_NomCliente.text.toString()+"\n CORREO"+"\n  "+txt_CorreoCliente.text.toString())
-        adapter?.notifyDataSetChanged()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        adapter = ArrayAdapter(this,
-                android.R.layout.simple_list_item_1,
-                listItem)
-        listView.adapter = adapter
-    }
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
