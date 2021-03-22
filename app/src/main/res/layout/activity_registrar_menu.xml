@@ -14,15 +14,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.851" />
 
     <EditText
         android:id="@+id/txt_CodigoMenu"
-        android:layout_width="255dp"
-        android:layout_height="45dp"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:gravity="center"
         android:hint="CODIGO"
@@ -32,15 +32,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintVertical_bias="0.227" />
 
     <EditText
         android:id="@+id/txt_Precio"
-        android:layout_width="337dp"
-        android:layout_height="47dp"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:gravity="center"
         android:hint="INGRESE EL PRECIO"
@@ -50,15 +50,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.57" />
 
     <EditText
         android:id="@+id/txt_Detalles"
-        android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_width="292dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:gravity="center"
         android:hint="DESCRIPCION DEL MENU:"
@@ -68,14 +68,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <EditText
         android:id="@+id/txt_Nombre"
-        android:layout_width="333dp"
-        android:layout_height="41dp"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:gravity="center"
         android:hint="INGRESE EL NOMBRE DEL MENU:"
@@ -84,10 +85,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <TextView
         android:id="@+id/txvCLIENTE"
@@ -138,7 +139,7 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
@@ -152,7 +153,7 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />

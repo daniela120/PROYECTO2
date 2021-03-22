@@ -59,6 +59,7 @@ class RealizarPedido : AppCompatActivity() {
         if (spinner_TipoPago.selectedItem.toString().isEmpty()) {
             Toast.makeText(this, "No Seleciono ninguno", Toast.LENGTH_SHORT).show()
         } else {
+            Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
             var num = 0
             val parametro = StringBuilder()
             num += 1

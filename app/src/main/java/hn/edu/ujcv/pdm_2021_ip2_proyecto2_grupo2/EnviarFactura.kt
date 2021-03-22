@@ -79,7 +79,7 @@ class EnviarFactura : AppCompatActivity() {
 
 
         }
-        var facturafinal = "DATOS DE LA FACTURA"+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
+        var facturafinal = "____LA COCINA DE MEXICO____"+"\nDATOS DE LA FACTURA"+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
         intent.putExtra(Intent.EXTRA_TEXT, facturafinal)
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))
