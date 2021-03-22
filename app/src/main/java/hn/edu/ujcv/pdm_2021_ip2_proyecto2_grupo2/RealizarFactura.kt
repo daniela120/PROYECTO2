@@ -21,6 +21,7 @@ class RealizarFactura : AppCompatActivity() {
     var datos_pedido: HashMap<Int, String> = hashMapOf()
     var datos_factura: HashMap<Int, String> = hashMapOf()
     var num = 0
+    var cont=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,6 +84,7 @@ class RealizarFactura : AppCompatActivity() {
                             parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
                             parametro.append(txt_Clientefa.text.toString().trim()).append("|")
                             parametro.append(txt_EmpleadoFa.text.toString().trim()).append("|")
+                            parametro.append(txt_COMBO.text.toString().trim()).append("|")
                             parametro.append(txt_Total.text.toString().trim()).append("|")
                             datos_factura.put(num, parametro.toString())
                             println(datos_factura.toString())
@@ -157,24 +159,17 @@ class RealizarFactura : AppCompatActivity() {
         var com:String=""
 
 
-        for(da in datos_menu) {
-
-
-            for (ju in datos_pedido) {
-                val data2 = ju.toString().split("|").toTypedArray()
-                com = data2[3].toString()
-            }
-
+        for(da in datos_pedido) {
 
             val data3 = da.toString().split("|").toTypedArray()
-            if (com == data3[2]) {
-                c = data3[4].toInt()
-                d= data3[3].toString()
+                c = c + data3[4].toInt()
+                d = d + "" + data3[3].toString()
                 println("SI SE CUMPLIO")
             }
 
 
-        }
+
+
 
 
         txt_Total.setText(c.toString())

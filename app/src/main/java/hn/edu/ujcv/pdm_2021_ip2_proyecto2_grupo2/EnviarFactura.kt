@@ -82,11 +82,12 @@ class EnviarFactura : AppCompatActivity() {
             c=data1[2].toString()
             de=data1[3].toString()
             e=data1[4].toString()
-            f=data1[5].toString()
+            a=data1[5].toString()
+            f=data1[6].toString()
 
 
         }
-        var facturafinal = "______LA COCINA DE MEXICO_______"+"\n.........DATOS DE LA FACTURA.........."+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+ "\nTIPO DE MENU: "+pedidos+"\nDESCRIPCION DEL MENU: "+des+"\nNo. MESA: "+mesa+" DESCRIPCION DE LA MESA: "+mesad+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
+        var facturafinal = "______LA COCINA DE MEXICO_______"+"\n.........DATOS DE LA FACTURA.........."+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+ "\nTIPO DE MENU: "+a+"\nDESCRIPCION DEL MENU: "+des+"\nNo. MESA: "+mesa+" DESCRIPCION DE LA MESA: "+mesad+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
         intent.putExtra(Intent.EXTRA_TEXT, facturafinal)
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))

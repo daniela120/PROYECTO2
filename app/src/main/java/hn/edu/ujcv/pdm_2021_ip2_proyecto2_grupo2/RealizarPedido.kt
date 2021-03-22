@@ -22,6 +22,7 @@ class RealizarPedido : AppCompatActivity() {
     var datos_empleado: HashMap<Int, String> = hashMapOf()
     var datos_pedido: HashMap<Int, String> = hashMapOf()
     var datos_factura: HashMap<Int, String> = hashMapOf()
+    var num = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,17 +58,29 @@ class RealizarPedido : AppCompatActivity() {
 
 
     fun guardar() {
+        var a=0
+        var b=""
         if (spinner_TipoPago.isEmpty()) {
             Toast.makeText(this, "No hay menus para seleccionar", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
-            var num = 0
+
             val parametro = StringBuilder()
             num += 1
             parametro.append("DATOS DEL PEDIDO").append("|")
             parametro.append(txt_ClientePe.text.toString().trim()).append("|")
             parametro.append(txt_EmpleadoPe.text.toString().trim()).append("|")
             parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
+            for(d in datos_menu){
+                var data3 = d.toString().split("|").toTypedArray()
+                var f = data3[2]
+                if(spinner_TipoPago.selectedItem.toString()==f){
+                    a=a+data3[4].toInt()
+                    parametro.append(a.toString().trim()).append("|")
+                }
+
+
+            }
             datos_pedido.put(num, parametro.toString())
             println(datos_pedido.toString())
 
