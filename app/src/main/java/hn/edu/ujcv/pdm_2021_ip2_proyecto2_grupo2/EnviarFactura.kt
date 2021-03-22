@@ -36,7 +36,7 @@ class EnviarFactura : AppCompatActivity() {
         obtenerFactura()
         iniciar()
 
-        inicio()
+
 
     }
 
@@ -88,16 +88,6 @@ class EnviarFactura : AppCompatActivity() {
         startActivity(Intent.createChooser(intent, "Email"))
 
 
-    }
-    fun inicio() {
-        var a = 0
-        for (data in datos_factura) {
-            val data1 = data.toString().split("|").toTypedArray()
-            a = data1[1].toInt()
-
-
-        }
-        txt_CodigoFac.setText(a.toString())
     }
 
 
