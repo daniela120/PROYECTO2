@@ -28,10 +28,10 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
             "1 Mexican Burger, 1 refresco")
 
     private val images = intArrayOf(
-        R.drawable.cliente,
-        R.drawable.menu, R.drawable.mesa,
-        R.drawable.empleado, R.drawable.pedidox,
-        R.drawable.factura, R.drawable.enviar)
+        R.drawable.tacos_jumbo,
+        R.drawable.nachos_familiar, R.drawable.burritos_jr,
+        R.drawable.tacos_jr, R.drawable.chiles_rellenos,
+        R.drawable.chilaquiles, R.drawable.torta_jumbo, R.drawable.mexican_burger)
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
