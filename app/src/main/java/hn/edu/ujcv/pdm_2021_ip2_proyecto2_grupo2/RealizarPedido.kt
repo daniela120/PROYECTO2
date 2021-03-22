@@ -82,8 +82,9 @@ class RealizarPedido : AppCompatActivity() {
         var A:ArrayList<String> = ArrayList()
         var empleados:String=""
         var a:String=""
+        var b:String=""
         for(i in datos_menu){
-            val data = i.toString().split("|").toTypedArray()
+            val data = i.toString().split("\n").toTypedArray()
             empleados=data[2].toString()
             A.add(empleados)
 
@@ -104,12 +105,20 @@ class RealizarPedido : AppCompatActivity() {
         }
 
         for(data in datos_cliente){
-            val data1 = data.toString().split("|").toTypedArray()
+            val data1 = data.toString().split("\n").toTypedArray()
             a=data1[2].toString()
 
 
         }
         txt_ClientePe.setText(a)
+
+        for(d in datos_empleado){
+            val data1 = d.toString().split("|").toTypedArray()
+            b=data1[2].toString()
+
+
+        }
+        txt_EmpleadoPe.setText(b)
 
     }
 
