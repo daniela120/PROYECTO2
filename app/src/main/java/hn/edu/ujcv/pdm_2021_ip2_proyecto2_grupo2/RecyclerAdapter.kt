@@ -12,6 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+    var datos_cliente: HashMap<Int, String> = hashMapOf()
+    var datos_menu: HashMap<Int, String> = hashMapOf()
+    var datos_mesa: HashMap<Int, String> = hashMapOf()
+    var datos_empleado: HashMap<Int, String> = hashMapOf()
+    var datos_pedido: HashMap<Int, String> = hashMapOf()
+    var datos_factura: HashMap<Int, String> = hashMapOf()
 
     private val titles = arrayOf("Registrar Cliente", "Registrar Menu", "Registrar Mesa",
         "Registrar Empleado", "Realizar Pedido",
@@ -68,6 +74,8 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             }
         }
     }
+
+    /*FUNCIONES PARA NAVEGAR ENTRE ACTIVITIES*/
     private fun GoMain(itemView: View){
         val intent = Intent(itemView.context, MainActivity::class.java)
         itemView.context.startActivity(intent)
@@ -75,36 +83,107 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
     fun GoRegistrarCliente(itemView: View) {
         val intent = Intent(itemView.context, RegistrarCliente::class.java)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
     }
 
     fun GoRegistrarMenu(itemView: View) {
         val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
     }
     fun GoRegistrarMesa(itemView: View) {
         val intent = Intent(itemView.context, RegistrarMesa::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
     }
 
     fun GoRegistrarEmpleado(itemView: View) {
         val intent = Intent(itemView.context, RegistrarEmpleado::class.java)
-        itemView.context.startActivity(intent)
-    }
-    fun GoRealizarFactura(itemView: View) {
-        val intent = Intent(itemView.context, RealizarFactura::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
     }
 
     fun GoRealizarPedido(itemView: View) {
         val intent = Intent(itemView.context, RealizarPedido::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
     }
 
+
+    fun GoRealizarFactura(itemView: View) {
+        val intent = Intent(itemView.context, RealizarFactura::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        itemView.context.startActivity(intent)
+    }
+
+
+
     fun GoEnviarFactura(itemView: View) {
         val intent = Intent(itemView.context, EnviarFactura::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
         println("KOO")
+    }
+
+    /*FUNCIONES PARA RECIBIR LOS DATOS*/
+    fun setCliente(cliente:HashMap<Int,String>){
+        this.datos_cliente=cliente
+
+    }
+
+    fun setMenu(menu:HashMap<Int,String>){
+        this.datos_menu=menu
+
+    }
+
+    fun setMesa(mesa:HashMap<Int,String>){
+        this.datos_mesa=mesa
+
+    }
+
+    fun setEmpleado(empleado:HashMap<Int,String>){
+        this.datos_empleado=empleado
+
+    }
+
+    fun setPedido(pedido:HashMap<Int,String>){
+        this.datos_pedido=pedido
+
+    }
+
+    fun setFactura(factura:HashMap<Int,String>){
+        this.datos_factura=factura
+
     }
 
 

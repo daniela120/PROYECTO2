@@ -13,7 +13,12 @@ import kotlinx.android.synthetic.main.activity_registrar_empleado.*
 import java.lang.StringBuilder
 
 class RealizarFactura : AppCompatActivity() {
-    var datos_Factura: HashMap<Int, String> = hashMapOf()
+    var datos_cliente: HashMap<Int, String> = hashMapOf()
+    var datos_menu: HashMap<Int, String> = hashMapOf()
+    var datos_mesa: HashMap<Int, String> = hashMapOf()
+    var datos_empleado: HashMap<Int, String> = hashMapOf()
+    var datos_pedido: HashMap<Int, String> = hashMapOf()
+    var datos_factura: HashMap<Int, String> = hashMapOf()
     var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +31,12 @@ class RealizarFactura : AppCompatActivity() {
         btn_regresarFA.setOnClickListener {
             regresar()
         }
+        obtenerCliente()
+        obtenerMenu()
+        obtenerMesa()
+        obtenerEmpleado()
+        obtenerPedido()
+
 
         val spinner_TipoPago = findViewById<Spinner>(R.id.spinner_TipoPago)
         val lista_TipoPago  = resources.getStringArray(R.array.valoresPago)
@@ -68,8 +79,8 @@ class RealizarFactura : AppCompatActivity() {
                             parametro.append(txt_Clientefa.text.toString().trim()).append("|")
                             parametro.append(txt_EmpleadoFa.text.toString().trim()).append("|")
                             parametro.append(txt_Total.text.toString().trim()).append("|")
-                            datos_Factura.put(num, parametro.toString())
-                            println(datos_Factura.toString())
+                            datos_factura.put(num, parametro.toString())
+                            println(datos_factura.toString())
                             Toast.makeText(this, "Factura Realizada", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -80,6 +91,50 @@ class RealizarFactura : AppCompatActivity() {
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("status-c","true")
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("status-m","true")
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("status-me","true")
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("status-e","true")
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("status-p","true")
+        intent.putExtra("Factura", datos_factura)
+        intent.putExtra("status-f","true")
         startActivity(intent)
     }
+
+    /*OBTENCION DE LAS LISTAS*/
+
+    private fun obtenerCliente(){
+        val intent = intent
+        datos_cliente= intent.getSerializableExtra("Cliente") as HashMap<Int,String>
+        println(datos_cliente.toString())
+    }
+    private fun obtenerMenu(){
+        val intent = intent
+        datos_menu= intent.getSerializableExtra("Menu") as HashMap<Int,String>
+        println(datos_menu.toString())
+    }
+    private fun obtenerMesa(){
+        val intent = intent
+        datos_mesa= intent.getSerializableExtra("Mesa") as HashMap<Int,String>
+        println(datos_mesa.toString())
+    }
+    private fun obtenerEmpleado(){
+        val intent = intent
+        datos_empleado= intent.getSerializableExtra("Empleado") as HashMap<Int,String>
+        println(datos_empleado.toString())
+    }
+    private fun obtenerPedido(){
+        val intent = intent
+        datos_pedido= intent.getSerializableExtra("Pedido") as HashMap<Int,String>
+        println(datos_pedido.toString())
+    }
+
+
+
+
 }

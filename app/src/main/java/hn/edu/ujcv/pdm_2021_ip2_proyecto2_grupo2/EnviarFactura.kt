@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.activity_enviar_factura.*
 
 class EnviarFactura : AppCompatActivity() {
     var factura:HashMap<Int,String> = hashMapOf()
+    var datos_Cliente: HashMap<Int, String> = hashMapOf()
+    var datos_mesa: HashMap<Int, String> = hashMapOf()
 
 
 
@@ -20,6 +22,8 @@ class EnviarFactura : AppCompatActivity() {
         btn_EnviarCorreo.setOnClickListener {
             enviar()
         }
+        obtenerCliente()
+        obtenerMesa()
 
 
     }
@@ -27,6 +31,8 @@ class EnviarFactura : AppCompatActivity() {
 
     private fun regresaralmenu() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("Cliente", datos_Cliente)
+        intent.putExtra("status","true")
         startActivity(intent)
     }
 
@@ -41,6 +47,18 @@ class EnviarFactura : AppCompatActivity() {
         startActivity(Intent.createChooser(intent, "Email"))
 
 
+    }
+
+    private fun obtenerCliente(){
+        val intent = intent
+        datos_Cliente= intent.getSerializableExtra("Cliente") as HashMap<Int,String>
+        println(datos_Cliente.toString())
+    }
+
+    private fun obtenerMesa(){
+        val intent = intent
+        datos_mesa= intent.getSerializableExtra("Mesa") as HashMap<Int,String>
+        println(datos_mesa.toString())
     }
 
 }

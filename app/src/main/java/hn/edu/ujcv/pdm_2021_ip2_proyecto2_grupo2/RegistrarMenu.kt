@@ -19,25 +19,33 @@ import kotlin.collections.HashMap
 
 class RegistrarMenu : AppCompatActivity() {
 
-    var datos_Menu: HashMap<Int, String> = hashMapOf()
+    var datos_cliente: HashMap<Int, String> = hashMapOf()
+    var datos_menu: HashMap<Int, String> = hashMapOf()
+    var datos_mesa: HashMap<Int, String> = hashMapOf()
+    var datos_empleado: HashMap<Int, String> = hashMapOf()
+    var datos_pedido: HashMap<Int, String> = hashMapOf()
+    var datos_factura: HashMap<Int, String> = hashMapOf()
     var num = 0
     var listItem = ArrayList<String>()
     var adapter: ArrayAdapter<String>? = null
+    var stado:Boolean=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_menu)
 
-        btn_GuardarMenu.setOnClickListener {
-            guardar()
-        }
+
         btn_regresarMenu.setOnClickListener {
             regresar()
         }
         btn_GuardarMenu.setOnClickListener { view ->
-            addListItem()
-            Snackbar.make(view, "Menu agregado a la lista", Snackbar.LENGTH_LONG)
+            guardar()
+            if(stado==true){
+                addListItem()
+                Snackbar.make(view, "Menu agregado a la lista", Snackbar.LENGTH_LONG)
                     .setAction("Deshacer", deshacerOnclickListener).show()
+            }
+
         }
         btn_VerMenus.setOnClickListener { mostrar() }
 
@@ -81,6 +89,11 @@ class RegistrarMenu : AppCompatActivity() {
             {
             }
         }
+        obtenerCliente()
+        obtenerMesa()
+        obtenerEmpleado()
+        obtenerPedido()
+        obtenerFactura()
     }
 
 
@@ -106,29 +119,76 @@ class RegistrarMenu : AppCompatActivity() {
 
     private fun guardar() {
 
-        if (txt_CodigoMenu.text.toString().isEmpty()) {
+        if (txt_CodigoMenu.text.isEmpty()) {
             Toast.makeText(this, "Ingrese el codigo del menu", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "Menu Registrado", Toast.LENGTH_SHORT).show()
-                        val parametro = StringBuilder()
-                        num += 1
-                        parametro.append("DATOS MENU").append("|")
-                        parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-                        parametro.append(spinner_DescripcionMenu.toString().trim()).append("|")
-                        parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
-                        parametro.append(spinner_PrecioMenu.selectedItem.toString().trim()).append("|")
-                        datos_Menu.put(num, parametro.toString())
-                        println(datos_Menu.toString())
-                    }
-                }
+        } else {
+            val parametro = StringBuilder()
+            num += 1
+            parametro.append("DATOS MENU").append("|")
+            parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
+            parametro.append(spinner_DescripcionMenu.selectedItem.toString().trim()).append("|")
+            parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
+            parametro.append(spinner_PrecioMenu.selectedItem.toString().trim()).append("|")
+            datos_menu.put(num, parametro.toString())
+            println(datos_menu.toString())
+            stado=true
+
+
+        }
+    }
 
 
 
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("status-c","true")
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("status-m","true")
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("status-me","true")
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("status-e","true")
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("status-p","true")
+        intent.putExtra("Factura", datos_factura)
+        intent.putExtra("status-f","true")
         startActivity(intent)
     }
+
+    /*OBTENCION DE LAS LISTAS*/
+
+    private fun obtenerCliente(){
+        val intent = intent
+        datos_cliente= intent.getSerializableExtra("Cliente") as HashMap<Int,String>
+        println(datos_cliente.toString())
+    }
+
+    private fun obtenerMesa(){
+        val intent = intent
+        datos_mesa= intent.getSerializableExtra("Mesa") as HashMap<Int,String>
+        println(datos_mesa.toString())
+    }
+    private fun obtenerEmpleado(){
+        val intent = intent
+        datos_empleado= intent.getSerializableExtra("Empleado") as HashMap<Int,String>
+        println(datos_empleado.toString())
+    }
+    private fun obtenerPedido(){
+        val intent = intent
+        datos_pedido= intent.getSerializableExtra("Pedido") as HashMap<Int,String>
+        println(datos_pedido.toString())
+    }
+
+    private fun obtenerFactura(){
+        val intent = intent
+        datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
+        println(datos_factura.toString())
+    }
+
+
+
     fun mostrar() {
         val intent = Intent(this, RecyclerAdapterComidas::class.java)
         startActivity(intent)

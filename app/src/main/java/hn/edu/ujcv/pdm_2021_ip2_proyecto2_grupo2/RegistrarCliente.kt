@@ -8,7 +8,13 @@ import kotlinx.android.synthetic.main.activity_registrar_cliente.*
 import java.lang.StringBuilder
 
 class RegistrarCliente : AppCompatActivity() {
-    var datos_Cliente: HashMap<Int, String> = hashMapOf()
+    var datos_cliente: HashMap<Int, String> = hashMapOf()
+    var datos_menu: HashMap<Int, String> = hashMapOf()
+    var datos_mesa: HashMap<Int, String> = hashMapOf()
+    var datos_empleado: HashMap<Int, String> = hashMapOf()
+    var datos_pedido: HashMap<Int, String> = hashMapOf()
+    var datos_factura: HashMap<Int, String> = hashMapOf()
+
     var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +24,12 @@ class RegistrarCliente : AppCompatActivity() {
             regresar() }
         btn_guardarCliente.setOnClickListener {
             guardar() }
+        obtenerMenu()
+        obtenerMesa()
+        obtenerEmpleado()
+        obtenerPedido()
+        obtenerFactura()
+
 
 
     }
@@ -41,8 +53,8 @@ class RegistrarCliente : AppCompatActivity() {
                     parametro.append(txt_IdCliente.text.toString().trim()).append("|")
                     parametro.append(txt_NomCliente.text.toString().trim()).append("|")
                     parametro.append(txt_CorreoCliente.text.toString().trim()).append("|")
-                    datos_Cliente.put(num,parametro.toString())
-                    println(datos_Cliente.toString())
+                    datos_cliente.put(num,parametro.toString())
+                    println(datos_cliente.toString())
                 }
             }
         }
@@ -50,6 +62,48 @@ class RegistrarCliente : AppCompatActivity() {
 
     fun regresar() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("status-c","true")
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("status-m","true")
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("status-me","true")
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("status-e","true")
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("status-p","true")
+        intent.putExtra("Factura", datos_factura)
+        intent.putExtra("status-f","true")
         startActivity(intent)
     }
+
+    /*OBTENER LISTAS*/
+
+    private fun obtenerMenu(){
+        val intent = intent
+        datos_menu= intent.getSerializableExtra("Menu") as HashMap<Int,String>
+        println("Recibi menu: "+datos_menu.toString())
+    }
+    private fun obtenerMesa(){
+        val intent = intent
+        datos_mesa= intent.getSerializableExtra("Mesa") as HashMap<Int,String>
+        println("Recibi mesa: "+datos_mesa.toString())
+    }
+    private fun obtenerEmpleado(){
+        val intent = intent
+        datos_empleado= intent.getSerializableExtra("Empleado") as HashMap<Int,String>
+        println("Recibi empleado: "+datos_empleado.toString())
+    }
+    private fun obtenerPedido(){
+        val intent = intent
+        datos_pedido= intent.getSerializableExtra("Pedido") as HashMap<Int,String>
+        println("Recibi pedido: "+datos_pedido.toString())
+    }
+
+    private fun obtenerFactura(){
+        val intent = intent
+        datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
+        println("Recibi factura: "+datos_factura.toString())
+    }
+
 }

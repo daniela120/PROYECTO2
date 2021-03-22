@@ -65,6 +65,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="CODIGO"
+        android:text=""
         android:inputType="number"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
