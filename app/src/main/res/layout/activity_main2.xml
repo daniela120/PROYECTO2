@@ -36,7 +36,7 @@
                 android:id="@+id/toolbar2"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimaryVariant"
+                android:background="@color/blue_cobalt"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/Theme.PDM_2021_IP2_PROYECTO2_GRUPO2.PopupOverlay" />
