@@ -18,6 +18,7 @@ import java.util.ArrayList
 class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerAdapter = RecyclerAdapter()
+    private var adapter2: RecyclerAdapterComidas = RecyclerAdapterComidas()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
