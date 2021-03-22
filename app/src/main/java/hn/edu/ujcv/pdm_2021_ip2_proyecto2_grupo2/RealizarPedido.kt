@@ -6,9 +6,12 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_realizar_pedido.*
 import kotlinx.android.synthetic.main.activity_registrar_cliente.*
+import kotlinx.android.synthetic.main.activity_registrar_empleado.*
+import kotlinx.android.synthetic.main.activity_registrar_menu.*
 import java.lang.StringBuilder
 
 class RealizarPedido : AppCompatActivity() {
@@ -52,16 +55,21 @@ class RealizarPedido : AppCompatActivity() {
     }
 
 
-    fun guardar(){
-        var num=0
-        val parametro = StringBuilder()
-        num += 1
-        parametro.append("DATOS DEL PEDIDO").append("|")
-        parametro.append(txt_ClientePe.text.toString().trim()).append("|")
-        parametro.append(txt_EmpleadoPe.text.toString().trim()).append("|")
-        parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
-        datos_pedido.put(num,parametro.toString())
+    fun guardar() {
+        if (spinner_PuestoEmpleado.selectedItem.toString().isEmpty()) {
+            Toast.makeText(this, "No Seleciono ninguno", Toast.LENGTH_SHORT).show()
+        } else {
+            var num = 0
+            val parametro = StringBuilder()
+            num += 1
+            parametro.append("DATOS DEL PEDIDO").append("\n")
+            parametro.append(txt_ClientePe.text.toString().trim()).append("\n")
+            parametro.append(txt_EmpleadoPe.text.toString().trim()).append("\n")
+            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("\n")
+            datos_pedido.put(num, parametro.toString())
+            println(datos_pedido.toString())
 
+        }
     }
 
     /*OBTENCION DE LAS LISTAS*/
@@ -114,11 +122,13 @@ class RealizarPedido : AppCompatActivity() {
             }
 
             override fun onItemSelected(
-                parent: AdapterView<*>?, view: View?, position: Int, id: Long
-            ) {
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long){
+
 
             }
+
         }
+
 
         for(data in datos_cliente){
             val data1 = data.toString().split("\n").toTypedArray()
@@ -129,7 +139,7 @@ class RealizarPedido : AppCompatActivity() {
         txt_ClientePe.setText(a)
 
         for(d in datos_empleado){
-            val data1 = d.toString().split("|").toTypedArray()
+            val data1 = d.toString().split("\n ").toTypedArray()
             b=data1[2].toString()
 
 
