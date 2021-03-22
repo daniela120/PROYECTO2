@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2.MainActivity">
+    tools:context="hn.edu.pdm_laboratorio_prueba.MainActivity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
