@@ -7,8 +7,8 @@
 
     <ListView
         android:id="@+id/lstView"
-        android:layout_width="206dp"
-        android:layout_height="110dp"
+        android:layout_width="244dp"
+        android:layout_height="139dp"
         android:fadingEdge="horizontal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,26 +50,27 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <EditText
         android:id="@+id/txt_Detalles"
-        android:layout_width="339dp"
-        android:layout_height="125dp"
+        android:layout_width="335dp"
+        android:layout_height="60dp"
         android:ems="10"
         android:gravity="center"
         android:hint="DESCRIPCION DEL MENU:"
-        android:inputType="textMultiLine|text"
+        android:inputType="text"
         android:text=""
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/txt_Nombre"
@@ -99,10 +100,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -118,8 +119,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="255dp"
-        android:layout_height="125dp"
+        android:layout_width="234dp"
+        android:layout_height="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
