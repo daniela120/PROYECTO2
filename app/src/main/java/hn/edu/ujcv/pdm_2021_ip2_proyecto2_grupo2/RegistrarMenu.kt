@@ -47,7 +47,7 @@ class RegistrarMenu : AppCompatActivity() {
             }
 
         }
-        btn_VerMenus.setOnClickListener { mostrar() }
+
 
         val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
         val lista_Menus = resources.getStringArray(R.array.valoresMenu)
@@ -226,10 +226,6 @@ class RegistrarMenu : AppCompatActivity() {
 
 
 
-    fun mostrar() {
-        val intent = Intent(this, MainActivity2::class.java)
-        startActivity(intent)
-    }
 
 
 }

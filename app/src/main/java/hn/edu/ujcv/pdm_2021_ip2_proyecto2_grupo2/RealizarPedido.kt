@@ -23,7 +23,7 @@ class RealizarPedido : AppCompatActivity() {
         obtenerMesa()
         obtenerEmpleado()
         obtenerFactura()
-
+    btn_VerMenus.setOnClickListener { mostrar() }
     }
 
     fun regresar() {
@@ -70,6 +70,10 @@ class RealizarPedido : AppCompatActivity() {
         val intent = intent
         datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
         println(datos_factura.toString())
+    }
+    fun mostrar() {
+        val intent = Intent(this, MainActivity2::class.java)
+        startActivity(intent)
     }
 
 }
