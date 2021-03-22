@@ -46,4 +46,11 @@
     </string-array>
 
 
+    <string-array name="valoresPago">
+        <item>Efectivo</item>
+        <item>Tarjeta</item>
+        <item>Mixto</item>
+    </string-array>
+
+
 </resources>
