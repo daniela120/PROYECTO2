@@ -58,7 +58,7 @@ class RealizarPedido : AppCompatActivity() {
 
     fun guardar() {
         if (spinner_TipoPago.isEmpty()) {
-            Toast.makeText(this, "No Seleciono ninguno", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No hay menus para seleccionar", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
             var num = 0
