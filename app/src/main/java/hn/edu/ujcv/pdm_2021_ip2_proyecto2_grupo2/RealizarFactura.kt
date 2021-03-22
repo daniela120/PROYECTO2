@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_enviar_factura.*
 import kotlinx.android.synthetic.main.activity_factura.*
 import kotlinx.android.synthetic.main.activity_registrar_empleado.*
 import java.lang.StringBuilder
@@ -30,6 +31,9 @@ class RealizarFactura : AppCompatActivity() {
         }
         btn_regresarFA.setOnClickListener {
             regresar()
+        }
+        btn_enviarFactura.setOnClickListener {
+            go()
         }
         obtenerCliente()
         obtenerMenu()
@@ -74,12 +78,12 @@ class RealizarFactura : AppCompatActivity() {
                         } else {
                             val parametro = StringBuilder()
                             num += 1
-                            parametro.append("DATOS FACTURA").append("\n")
-                            parametro.append(txt_CodigoPedido.text.toString().trim()).append("\n")
-                            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("\n")
-                            parametro.append(txt_Clientefa.text.toString().trim()).append("\n")
-                            parametro.append(txt_EmpleadoFa.text.toString().trim()).append("\n")
-                            parametro.append(txt_Total.text.toString().trim()).append("\n")
+                            parametro.append("DATOS FACTURA").append("|")
+                            parametro.append(txt_CodigoPedido.text.toString().trim()).append("|")
+                            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
+                            parametro.append(txt_Clientefa.text.toString().trim()).append("|")
+                            parametro.append(txt_EmpleadoFa.text.toString().trim()).append("|")
+                            parametro.append(txt_Total.text.toString().trim()).append("|")
                             datos_factura.put(num, parametro.toString())
                             println(datos_factura.toString())
                             Toast.makeText(this, "Factura Realizada", Toast.LENGTH_SHORT).show()
@@ -177,6 +181,18 @@ class RealizarFactura : AppCompatActivity() {
         txt_Total.setText(c.toString())
         txt_COMBO.setText(d)
 
+    }
+
+    fun go(){
+        val intent = Intent(this, EnviarFactura::class.java)
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("Factura", datos_factura)
+
+        startActivity(intent)
     }
 
 

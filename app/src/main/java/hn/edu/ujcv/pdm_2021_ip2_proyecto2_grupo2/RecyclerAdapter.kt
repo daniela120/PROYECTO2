@@ -152,7 +152,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         intent.putExtra("Pedido", datos_pedido)
         intent.putExtra("Factura", datos_factura)
         itemView.context.startActivity(intent)
-        println("KOO")
+
     }
 
     /*FUNCIONES PARA RECIBIR LOS DATOS*/

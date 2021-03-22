@@ -7,9 +7,14 @@ import kotlinx.android.synthetic.main.activity_enviar_factura.*
 
 
 class EnviarFactura : AppCompatActivity() {
-    var factura:HashMap<Int,String> = hashMapOf()
-    var datos_Cliente: HashMap<Int, String> = hashMapOf()
+
+    var datos_cliente: HashMap<Int, String> = hashMapOf()
+    var datos_menu: HashMap<Int, String> = hashMapOf()
     var datos_mesa: HashMap<Int, String> = hashMapOf()
+    var datos_empleado: HashMap<Int, String> = hashMapOf()
+    var datos_pedido: HashMap<Int, String> = hashMapOf()
+    var datos_factura: HashMap<Int, String> = hashMapOf()
+
 
 
 
@@ -23,7 +28,11 @@ class EnviarFactura : AppCompatActivity() {
             enviar()
         }
         obtenerCliente()
+        obtenerMenu()
         obtenerMesa()
+        obtenerEmpleado()
+        obtenerPedido()
+        obtenerFactura()
 
 
     }
@@ -31,8 +40,18 @@ class EnviarFactura : AppCompatActivity() {
 
     private fun regresaralmenu() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("Cliente", datos_Cliente)
-        intent.putExtra("status","true")
+        intent.putExtra("Cliente", datos_cliente)
+        intent.putExtra("status-c","true")
+        intent.putExtra("Menu", datos_menu)
+        intent.putExtra("status-m","true")
+        intent.putExtra("Mesa", datos_mesa)
+        intent.putExtra("status-me","true")
+        intent.putExtra("Empleado", datos_empleado)
+        intent.putExtra("status-e","true")
+        intent.putExtra("Pedido", datos_pedido)
+        intent.putExtra("status-p","true")
+        intent.putExtra("Factura", datos_factura)
+        intent.putExtra("status-f","true")
         startActivity(intent)
     }
 
@@ -42,7 +61,27 @@ class EnviarFactura : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL,to)
         intent.putExtra(Intent.EXTRA_SUBJECT, txt_Asunto.text.toString())
-        intent.putExtra(Intent.EXTRA_TEXT, factura.toString())
+        var a=""
+        var b=""
+        var c=""
+        var de=""
+        var e=""
+        var f=""
+
+
+        for(d in datos_factura){
+            val data1 = d.toString().split("|").toTypedArray()
+            a=data1[0].toString()
+            b=data1[1].toString()
+            c=data1[2].toString()
+            de=data1[3].toString()
+            e=data1[4].toString()
+            f=data1[5].toString()
+
+
+        }
+        var facturafinal = a+"\nCODIGOS DE LA FACTURA: "+b+"\nTIPO DE PAGO: "+c+"\nNOMBRE DEL CLIENTE: "+de+"\nATENDIDO POR: "+e+"\nTOTAL: "+f
+        intent.putExtra(Intent.EXTRA_TEXT, facturafinal)
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))
 
@@ -51,14 +90,34 @@ class EnviarFactura : AppCompatActivity() {
 
     private fun obtenerCliente(){
         val intent = intent
-        datos_Cliente= intent.getSerializableExtra("Cliente") as HashMap<Int,String>
-        println(datos_Cliente.toString())
+        datos_cliente= intent.getSerializableExtra("Cliente") as HashMap<Int,String>
+        println("El cliente es: "+datos_cliente.toString())
     }
-
+    private fun obtenerMenu(){
+        val intent = intent
+        datos_menu= intent.getSerializableExtra("Menu") as HashMap<Int,String>
+        println("El menu es: " +datos_menu.toString())
+    }
     private fun obtenerMesa(){
         val intent = intent
         datos_mesa= intent.getSerializableExtra("Mesa") as HashMap<Int,String>
-        println(datos_mesa.toString())
+        println("La mesa es: "+datos_mesa.toString())
+    }
+    private fun obtenerEmpleado(){
+        val intent = intent
+        datos_empleado= intent.getSerializableExtra("Empleado") as HashMap<Int,String>
+        println("El empleado es: "+datos_empleado.toString())
+    }
+    private fun obtenerPedido(){
+        val intent = intent
+        datos_pedido= intent.getSerializableExtra("Pedido") as HashMap<Int,String>
+        println("El pedido es: "+datos_pedido.toString())
+    }
+
+    private fun obtenerFactura(){
+        val intent = intent
+        datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
+        println("La factura es: "+datos_factura.toString())
     }
 
 }
