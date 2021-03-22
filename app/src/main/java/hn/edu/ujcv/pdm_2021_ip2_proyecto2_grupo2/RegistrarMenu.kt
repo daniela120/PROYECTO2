@@ -144,7 +144,7 @@ class RegistrarMenu : AppCompatActivity() {
     }
 
     private fun addListItem() {
-        listItem.add("MENU CREADO"+"\n"+txt_CodigoMenu.text.toString()+"\n"+txt_Nombre.text.toString()+"\n"+txt_Detalles.text.toString()+"\n"+txt_Precio.text.toString())
+        listItem.add("MENU CREADO"+"\n Codigo"+" "+txt_CodigoMenu.text.toString()+"\n Combo"+" "+txt_Nombre.text.toString()+"\n Combo-Incluye"+"\n  "+txt_Detalles.text.toString()+"\nPrecio"+" "+txt_Precio.text.toString())
         adapter?.notifyDataSetChanged()
     }
 
@@ -163,7 +163,7 @@ class RegistrarMenu : AppCompatActivity() {
         } else {
             val parametro = StringBuilder()
             num += 1
-            parametro.append("DATOS MENU").append("|")
+            parametro.append("DATOS MENU").append("\n")
             parametro.append(txt_CodigoMenu.text.toString().trim()).append("\n")
             parametro.append(txt_Nombre.text.toString().trim()).append("\n")
             parametro.append(txt_Detalles.text.toString().trim()).append("\n")

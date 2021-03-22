@@ -7,19 +7,22 @@
 
     <ListView
         android:id="@+id/lstView"
-        android:layout_width="344dp"
-        android:layout_height="94dp"
+        android:layout_width="206dp"
+        android:layout_height="110dp"
+        android:fadingEdge="horizontal"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.819" />
 
     <EditText
         android:id="@+id/txt_CodigoMenu"
-        android:layout_width="194dp"
-        android:layout_height="46dp"
+        android:layout_width="255dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:gravity="center"
         android:hint="CODIGO"
@@ -29,15 +32,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <EditText
         android:id="@+id/txt_Precio"
-        android:layout_width="296dp"
-        android:layout_height="46dp"
+        android:layout_width="337dp"
+        android:layout_height="47dp"
         android:ems="10"
         android:gravity="center"
         android:hint="INGRESE EL PRECIO"
@@ -47,78 +50,43 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <EditText
         android:id="@+id/txt_Detalles"
-        android:layout_width="314dp"
-        android:layout_height="71dp"
+        android:layout_width="339dp"
+        android:layout_height="125dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="DETALLES"
-        android:inputType="number"
+        android:hint="DESCRIPCION DEL MENU:"
+        android:inputType="textMultiLine|text"
         android:text=""
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
-
-    <TextView
-        android:id="@+id/txvtit"
-        android:layout_width="271dp"
-        android:layout_height="31dp"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/white2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351"
-        tools:text="NUEVO MENU:" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_Nombre"
-        android:layout_width="296dp"
-        android:layout_height="40dp"
+        android:layout_width="333dp"
+        android:layout_height="41dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="INGRESE EL NOMBRE UN MENU:"
-        android:inputType="number"
+        android:hint="INGRESE EL NOMBRE DEL MENU:"
         android:text=""
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
-
-    <TextView
-        android:id="@+id/txvDescripcion"
-        android:layout_width="242dp"
-        android:layout_height="46dp"
-        android:text="DESCRIPCION DEL MENU:"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/white2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <TextView
         android:id="@+id/txvtitulo"
@@ -131,27 +99,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
-
-    <TextView
-        android:id="@+id/txvDescripcion2"
-        android:layout_width="242dp"
-        android:layout_height="23dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="PRECIO:"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/white2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -159,16 +110,16 @@
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.996"
+        app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/menu" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="267dp"
-        android:layout_height="174dp"
+        android:layout_width="255dp"
+        android:layout_height="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
