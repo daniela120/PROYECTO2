@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_enviar_factura.*
+import kotlinx.android.synthetic.main.activity_factura.*
 
 
 class EnviarFactura : AppCompatActivity() {
@@ -35,6 +36,7 @@ class EnviarFactura : AppCompatActivity() {
         obtenerFactura()
         iniciar()
 
+        inicio()
 
     }
 
@@ -87,6 +89,17 @@ class EnviarFactura : AppCompatActivity() {
 
 
     }
+    fun inicio() {
+        var a = 0
+        for (data in datos_factura) {
+            val data1 = data.toString().split("|").toTypedArray()
+            a = data1[1].toInt()
+
+
+        }
+        txt_CodigoFac.setText(a.toString())
+    }
+
 
     private fun obtenerCliente(){
         val intent = intent
