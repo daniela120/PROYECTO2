@@ -123,7 +123,7 @@ class RealizarPedido : AppCompatActivity() {
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long){
-
+                    txvCombo.text=A[position].toString()
 
             }
 
