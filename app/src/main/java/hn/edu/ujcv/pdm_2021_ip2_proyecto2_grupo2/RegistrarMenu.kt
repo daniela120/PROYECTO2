@@ -164,7 +164,7 @@ class RegistrarMenu : AppCompatActivity() {
             val parametro = StringBuilder()
             num += 1
             parametro.append("\n DATOS MENU").append("\n Codigo del Menu  ")
-            parametro.append(txt_CodigoMenu.text.toString().trim()).append("\n Nombre del Menu"+" ")
+            parametro.append(txt_CodigoMenu.text.toString().trim()).append("\n Nombre del Menu ")
             parametro.append(txt_Nombre.text.toString().trim()).append("\n Descripcion ")
             parametro.append(txt_Detalles.text.toString().trim()).append("\n Precio  ")
             parametro.append(txt_Precio.text.toString().trim()).append("\n  ")

@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_realizar_pedido.*
+import kotlinx.android.synthetic.main.activity_registrar_cliente.*
+import java.lang.StringBuilder
 
 class RealizarPedido : AppCompatActivity() {
     var datos_cliente: HashMap<Int, String> = hashMapOf()
@@ -22,6 +24,7 @@ class RealizarPedido : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_realizar_pedido)
       btn_regresarPedido.setOnClickListener { regresar() }
+      btn_GuardarPedido.setOnClickListener { guardar() }
         obtenerCliente()
         obtenerMenu()
         obtenerMesa()
@@ -46,6 +49,19 @@ class RealizarPedido : AppCompatActivity() {
         intent.putExtra("Factura", datos_factura)
         intent.putExtra("status-f","true")
         startActivity(intent)
+    }
+
+
+    fun guardar(){
+        var num=0
+        val parametro = StringBuilder()
+        num += 1
+        parametro.append("DATOS DEL PEDIDO").append("\n")
+        parametro.append(txt_ClientePe.text.toString().trim()).append("\n")
+        parametro.append(txt_EmpleadoPe.text.toString().trim()).append("\n")
+        parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("\n")
+        datos_pedido.put(num,parametro.toString())
+
     }
 
     /*OBTENCION DE LAS LISTAS*/

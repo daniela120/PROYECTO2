@@ -36,6 +36,7 @@ class RealizarFactura : AppCompatActivity() {
         obtenerMesa()
         obtenerEmpleado()
         obtenerPedido()
+        inicio()
 
 
         val spinner_TipoPago = findViewById<Spinner>(R.id.spinner_TipoPago)
@@ -132,6 +133,50 @@ class RealizarFactura : AppCompatActivity() {
         val intent = intent
         datos_pedido= intent.getSerializableExtra("Pedido") as HashMap<Int,String>
         println(datos_pedido.toString())
+    }
+
+    fun inicio(){
+        var a=""
+        var b=""
+        var c=0
+        for(data in datos_pedido){
+            val data1 = data.toString().split("\n").toTypedArray()
+            a=data1[1].toString()
+            b=data1[2].toString()
+
+
+        }
+        txt_Clientefa.setText(a)
+        txt_EmpleadoFa.setText(b)
+        var com:String=""
+        var com2:String=""
+
+        for (da in datos_menu){
+            for(ju in datos_pedido){
+                val data2 = ju.toString().split("\n").toTypedArray()
+                com=data2[3].toString()
+            }
+
+            for(p in datos_menu){
+                val data3= p.toString().split("\n Nombre del Menu ").toTypedArray()
+                com2=data3[1].toString()
+            }
+
+            println("ESTO ES"+com)
+            println("GOLA"+com2)
+
+
+
+            if(com==com2){
+                val data2 = da.toString().split("\n Precio  ").toTypedArray()
+                c=data2[1].toInt()
+                println("SI SE CUMPLIO")
+
+            }
+        }
+        txt_Total.setText(c.toString())
+        println(datos_pedido[3].toString())
+        println(datos_menu[1].toString())
     }
 
 
