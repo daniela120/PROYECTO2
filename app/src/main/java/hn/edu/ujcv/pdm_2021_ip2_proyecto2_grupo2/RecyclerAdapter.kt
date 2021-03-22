@@ -58,7 +58,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     4 -> GoRealizarPedido(itemView)
                     5 -> GoRealizarFactura(itemView)
                     6 -> GoEnviarFactura(itemView)
-
+                    else->GoMain(itemView)
 
                 }
 
@@ -112,6 +112,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         viewHolder.itemTitle.text= titles[i]
         viewHolder.itemDetail.text= details[i]
         viewHolder.itemImage.setImageResource(images[i])
+
     }
 
     override fun getItemCount(): Int {

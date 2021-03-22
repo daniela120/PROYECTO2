@@ -36,7 +36,7 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.card_layout, viewGroup, false)
+            .inflate(R.layout.card_layout2, viewGroup, false)
         return ViewHolder(v)
     }
 
@@ -57,13 +57,13 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
 
 
                 when(position){
-                    0 -> GoRegistrarCliente(itemView)
-                    1 -> GoRegistrarMenu(itemView)
-                    2 -> GoRegistrarMesa(itemView)
-                    3 -> GoRegistrarEmpleado(itemView)
-                    4 -> GoRealizarPedido(itemView)
-                    5 -> GoRealizarFactura(itemView)
-                    6 -> GoEnviarFactura(itemView)
+                    0 -> GoTacosJumbo(itemView)
+                    1 -> GoNachosFamiliar(itemView)
+                    2 -> GoBurritos(itemView)
+                    3 -> GoTacosJr(itemView)
+                    4 -> GoChilesRellenos(itemView)
+                    5 -> GoTortaJumbo(itemView)
+                    6 -> GoMexicanBurger(itemView)
                     else->GoMain(itemView)
 
                 }
@@ -73,42 +73,46 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
 
             }
         }
+
     }
+
+     fun GoMexicanBurger(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        itemView.context.startActivity(intent)
+    }
+
+    fun GoTortaJumbo(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        itemView.context.startActivity(intent)
+    }
+
+    fun GoChilesRellenos(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        itemView.context.startActivity(intent)
+    }
+
+   fun GoTacosJr(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        itemView.context.startActivity(intent)
+    }
+
     private fun GoMain(itemView: View){
         val intent = Intent(itemView.context, MainActivity::class.java)
         itemView.context.startActivity(intent)
 
     }
-    fun GoRegistrarCliente(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarCliente::class.java)
+    fun GoBurritos(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
         itemView.context.startActivity(intent)
-    }
 
-    fun GoRegistrarMenu(itemView: View) {
+    }
+    fun GoTacosJumbo(itemView: View) {
         val intent = Intent(itemView.context, RegistrarMenu::class.java)
         itemView.context.startActivity(intent)
     }
-    fun GoRegistrarMesa(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMesa::class.java)
-        itemView.context.startActivity(intent)
-    }
 
-    fun GoRegistrarEmpleado(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarEmpleado::class.java)
-        itemView.context.startActivity(intent)
-    }
-    fun GoRealizarFactura(itemView: View) {
-        val intent = Intent(itemView.context, RealizarFactura::class.java)
-        itemView.context.startActivity(intent)
-    }
-
-    fun GoRealizarPedido(itemView: View) {
-        val intent = Intent(itemView.context, RealizarPedido ::class.java)
-        itemView.context.startActivity(intent)
-    }
-
-    fun GoEnviarFactura(itemView: View) {
-        val intent = Intent(itemView.context, EnviarFactura ::class.java)
+    fun GoNachosFamiliar(itemView: View) {
+        val intent = Intent(itemView.context, RegistrarMenu::class.java)
         itemView.context.startActivity(intent)
     }
 

@@ -11,4 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_menu_list">menus</string>
     <string name="title_menu_detail">Menu Detail</string>
+    <string name="title_menucomidas_list">menus</string>
+    <string name="title_menucomidas_detail">MenuComidas Detail</string>
 </resources>
