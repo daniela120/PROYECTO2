@@ -9,14 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_IP2_PROYECTO2_GRUPO2">
-        <activity android:name=".RegistrarCliente"></activity>
-        <activity android:name=".RegistrarMenu"></activity>
-        <activity android:name=".RegistrarMesa"></activity>
-        <activity android:name=".RealizarPedido"></activity>
-        <activity android:name=".RegistrarEmpleado"></activity>
-        <activity android:name=".RealizarFactura"></activity>
-        <activity android:name=".EnviarFactura"></activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -27,6 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistrarCliente"></activity>
+        <activity android:name=".RegistrarMenu"></activity>
+        <activity android:name=".RegistrarMesa"></activity>
+        <activity android:name=".RealizarPedido"></activity>
+        <activity android:name=".RegistrarEmpleado"></activity>
+        <activity android:name=".RealizarFactura"></activity>
+        <activity android:name=".EnviarFactura"></activity>
+
+
     </application>
 
 </manifest>
