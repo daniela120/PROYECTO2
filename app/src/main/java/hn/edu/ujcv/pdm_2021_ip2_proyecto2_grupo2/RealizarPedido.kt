@@ -2,6 +2,10 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_realizar_pedido.*
 
@@ -23,7 +27,8 @@ class RealizarPedido : AppCompatActivity() {
         obtenerMesa()
         obtenerEmpleado()
         obtenerFactura()
-    btn_VerMenus.setOnClickListener { mostrar() }
+        iniciar()
+
     }
 
     fun regresar() {
@@ -71,9 +76,41 @@ class RealizarPedido : AppCompatActivity() {
         datos_factura= intent.getSerializableExtra("Factura") as HashMap<Int,String>
         println(datos_factura.toString())
     }
-    fun mostrar() {
-        val intent = Intent(this, MainActivity2::class.java)
-        startActivity(intent)
+
+    fun iniciar(){
+        val spinner_pedido = findViewById<Spinner>(R.id.spinner_TipoPago)
+        var A:ArrayList<String> = ArrayList()
+        var empleados:String=""
+        var a:String=""
+        for(i in datos_menu){
+            val data = i.toString().split("|").toTypedArray()
+            empleados=data[2].toString()
+            A.add(empleados)
+
+        }
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, A)
+        spinner_pedido.adapter =adaptador
+        spinner_pedido.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long
+            ) {
+
+            }
+        }
+
+        for(data in datos_cliente){
+            val data1 = data.toString().split("|").toTypedArray()
+            a=data1[2].toString()
+
+
+        }
+        txt_ClientePe.setText(a)
+
     }
 
 }
