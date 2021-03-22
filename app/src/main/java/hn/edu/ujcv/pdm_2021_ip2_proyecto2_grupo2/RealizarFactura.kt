@@ -140,6 +140,7 @@ class RealizarFactura : AppCompatActivity() {
         var a=""
         var b=""
         var c=0
+        var d=""
         for(data in datos_pedido){
             val data1 = data.toString().split("|").toTypedArray()
             a=data1[1].toString()
@@ -150,7 +151,7 @@ class RealizarFactura : AppCompatActivity() {
         txt_Clientefa.setText(a)
         txt_EmpleadoFa.setText(b)
         var com:String=""
-        var com2:String=""
+
 
         for(da in datos_menu) {
 
@@ -165,6 +166,7 @@ class RealizarFactura : AppCompatActivity() {
             if (com == data3[2]) {
 
                 c = data3[4].toInt()
+                d= data3[3].toString()
                 println("SI SE CUMPLIO")
             }
 
@@ -173,6 +175,7 @@ class RealizarFactura : AppCompatActivity() {
 
 
         txt_Total.setText(c.toString())
+        txt_COMBO.setText(d)
 
     }
 
