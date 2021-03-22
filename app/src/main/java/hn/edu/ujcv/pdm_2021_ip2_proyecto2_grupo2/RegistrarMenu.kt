@@ -130,7 +130,7 @@ class RegistrarMenu : AppCompatActivity() {
         startActivity(intent)
     }
     fun mostrar() {
-        val intent = Intent(this, RecyclerAdapterComidas::class.java)
+        val intent = Intent(this, MainMenu::class.java)
         startActivity(intent)
     }
 

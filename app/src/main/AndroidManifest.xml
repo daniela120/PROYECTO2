@@ -45,6 +45,8 @@
         <activity android:name=".RegistrarEmpleado" />
         <activity android:name=".RealizarFactura" />
         <activity android:name=".EnviarFactura" />
+        <activity android:name=".MainMenu" />
+
     </application>
 
 </manifest>

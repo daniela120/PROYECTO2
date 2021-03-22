@@ -1,36 +1,37 @@
 package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
-
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.content_menu.*
+import kotlinx.android.synthetic.main.activity_main.*
+import android.graphics.Color
+import kotlinx.android.synthetic.main.menu_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainMenu : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerAdapter = RecyclerAdapter()
-
+    private var adapter: RecyclerAdapterComidas = RecyclerAdapterComidas()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        setContentView(R.layout.menu_main)
+        setSupportActionBar(findViewById(R.id.toolbar2))
 
-        collapsing_toolbar.title = "La Cocina \n de Mexico"
-        collapsing_toolbar.setContentScrimColor(Color.BLUE)
+        collapsing_toolbar2.title = "MENUS"
+        collapsing_toolbar2.setContentScrimColor(Color.BLACK)
 
         layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter=adapter
+        recyclerView2.layoutManager = layoutManager
+        recyclerView2.adapter=adapter
 
 
 
 
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
