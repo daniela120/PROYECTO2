@@ -18,8 +18,7 @@ import java.util.*
 import kotlin.collections.HashMap
 
 class RegistrarMenu : AppCompatActivity() {
-    private var des:String=""
-    private var pre:String=""
+
     var datos_Menu: HashMap<Int, String> = hashMapOf()
     var num = 0
     var listItem = ArrayList<String>()
@@ -37,9 +36,10 @@ class RegistrarMenu : AppCompatActivity() {
         }
         btn_GuardarMenu.setOnClickListener { view ->
             addListItem()
-            Snackbar.make(view, "Item agregado a la lista", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Menu agregado a la lista", Snackbar.LENGTH_LONG)
                     .setAction("Deshacer", deshacerOnclickListener).show()
         }
+
         val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
         val lista_Menus = resources.getStringArray(R.array.valoresMenu)
         val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Menus)
@@ -53,20 +53,45 @@ class RegistrarMenu : AppCompatActivity() {
             {
             }
         }
+
+        val spinner_DescripcionMenus = findViewById<Spinner>(R.id.spinner_DescripcionMenu)
+        val lista_DescripcionMenus  = resources.getStringArray(R.array.valoresDescripcionMenu)
+        val adaptador1 = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_DescripcionMenus )
+
+        spinner_DescripcionMenus .adapter =adaptador1
+        spinner_DescripcionMenus .onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+            }
+        }
+        val spinner_PrecioMenus = findViewById<Spinner>(R.id.spinner_PrecioMenu)
+        val lista_PrecioMenus = resources.getStringArray(R.array.valoresPrecioMenu)
+        val adaptador2 = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_PrecioMenus)
+
+        spinner_PrecioMenus.adapter =adaptador2
+        spinner_PrecioMenus.onItemSelectedListener = object:
+                AdapterView.OnItemSelectedListener { override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+            }
+        }
     }
 
 
     var deshacerOnclickListener: View.OnClickListener = View.OnClickListener { view ->
         listItem.removeAt(listItem.size -1)
         adapter?.notifyDataSetChanged()
-        Snackbar.make(view, "Item Eliminado", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Menu Eliminado", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
     }
 
     private fun addListItem() {
-        val dateFormat: SimpleDateFormat =
-                SimpleDateFormat( "HH:mm:ss dd/MM/yyyy", Locale.US)
-        listItem.add(dateFormat.format(Date()))
+        listItem.add(spinner_NombreMenu.selectedItem.toString()+" - "+spinner_PrecioMenu.selectedItem.toString())
         adapter?.notifyDataSetChanged()
     }
 
@@ -88,13 +113,14 @@ class RegistrarMenu : AppCompatActivity() {
                         num += 1
                         parametro.append("DATOS MENU").append("|")
                         parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-                        parametro.append(txvDescripcionMenu.text.toString().trim()).append("|")
+                        parametro.append(spinner_DescripcionMenu.toString().trim()).append("|")
                         parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
-                        parametro.append(txvPrecioMenu.toString().trim()).append("|")
+                        parametro.append(spinner_PrecioMenu.selectedItem.toString().trim()).append("|")
                         datos_Menu.put(num, parametro.toString())
                         println(datos_Menu.toString())
                     }
                 }
+
 
 
 
