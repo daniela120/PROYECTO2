@@ -49,10 +49,10 @@ class RegistrarCliente : AppCompatActivity() {
                     Toast.makeText(this, "Cliente Registrado", Toast.LENGTH_SHORT).show()
                     val parametro = StringBuilder()
                     num += 1
-                    parametro.append("DATOS CLIENTES").append("|")
-                    parametro.append(txt_IdCliente.text.toString().trim()).append("|")
-                    parametro.append(txt_NomCliente.text.toString().trim()).append("|")
-                    parametro.append(txt_CorreoCliente.text.toString().trim()).append("|")
+                    parametro.append("DATOS CLIENTES").append("\n")
+                    parametro.append(txt_IdCliente.text.toString().trim()).append("\n")
+                    parametro.append(txt_NomCliente.text.toString().trim()).append("\n")
+                    parametro.append(txt_CorreoCliente.text.toString().trim()).append("\n")
                     datos_cliente.put(num,parametro.toString())
                     println(datos_cliente.toString())
                 }

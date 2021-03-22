@@ -163,11 +163,11 @@ class RegistrarMenu : AppCompatActivity() {
         } else {
             val parametro = StringBuilder()
             num += 1
-            parametro.append("DATOS MENU").append("|")
-            parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-            parametro.append(txt_Nombre.text.toString().trim()).append("|")
-            parametro.append(txt_Detalles.text.toString().trim()).append("|")
-            parametro.append(txt_Precio.text.toString().trim()).append("|")
+            parametro.append("DATOS MENU").append("\n")
+            parametro.append(txt_CodigoMenu.text.toString().trim()).append("\n")
+            parametro.append(txt_Nombre.text.toString().trim()).append("\n")
+            parametro.append(txt_Detalles.text.toString().trim()).append("\n")
+            parametro.append(txt_Precio.text.toString().trim()).append("\n")
             datos_menu.put(num, parametro.toString())
             println(datos_menu.toString())
             stado=true
