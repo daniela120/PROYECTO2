@@ -178,6 +178,7 @@ class RegistrarMenu : AppCompatActivity() {
                         datos_menu.put(num, parametro.toString())
                         println(datos_menu.toString())
                         stado = true
+                        Toast.makeText(this, "Menu ingresado", Toast.LENGTH_SHORT).show()
 
                     }
                 }

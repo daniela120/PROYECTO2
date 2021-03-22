@@ -55,7 +55,7 @@ class RegistrarCliente : AppCompatActivity() {
                 if(txt_CorreoCliente.text.toString().isEmpty()){
                     Toast.makeText(this, "Ingrese un Correo", Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this, "Cliente Registrado", Toast.LENGTH_SHORT).show()
+
                     val parametro = StringBuilder()
                     num += 1
                     parametro.append("DATOS CLIENTES").append("|")
@@ -64,6 +64,7 @@ class RegistrarCliente : AppCompatActivity() {
                     parametro.append(txt_CorreoCliente.text.toString().trim()).append("|")
                     datos_cliente.put(num,parametro.toString())
                     println(datos_cliente.toString())
+                    Toast.makeText(this, "Cliente Registrado", Toast.LENGTH_SHORT).show()
                 }
             }
         }

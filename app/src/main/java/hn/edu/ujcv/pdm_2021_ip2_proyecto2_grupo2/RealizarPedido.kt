@@ -58,44 +58,50 @@ class RealizarPedido : AppCompatActivity() {
 
 
     fun guardar() {
-        var a=0
-        var b=""
+        var a = 0
+        var b = ""
         if (spinner_TipoPago.isEmpty()) {
             Toast.makeText(this, "No hay menus para seleccionar", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
+            if (txt_ClientePe.text.toString().isEmpty()) {
+                Toast.makeText(this, "Debe ingresar un nombre", Toast.LENGTH_SHORT).show()
 
-            val parametro = StringBuilder()
-            num += 1
-            parametro.append("DATOS DEL PEDIDO").append("|")
-            parametro.append(txt_ClientePe.text.toString().trim()).append("|")
-            parametro.append(txt_EmpleadoPe.text.toString().trim()).append("|")
-            parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
-            for(d in datos_menu){
-                var data3 = d.toString().split("|").toTypedArray()
-                var f = data3[2]
-                if(spinner_TipoPago.selectedItem.toString()==f){
-                    a=a+data3[4].toInt()
-                    parametro.append(a.toString().trim()).append("|")
-                }}
+            } else {
+                val parametro = StringBuilder()
+                num += 1
+                parametro.append("DATOS DEL PEDIDO").append("|")
+                parametro.append(txt_ClientePe.text.toString().trim()).append("|")
+                parametro.append(txt_EmpleadoPe.text.toString().trim()).append("|")
+                parametro.append(spinner_TipoPago.selectedItem.toString().trim()).append("|")
 
-                for(l in datos_menu){
+                for (d in datos_menu) {
+                    var data3 = d.toString().split("|").toTypedArray()
+                    var f = data3[2]
+                    if (spinner_TipoPago.selectedItem.toString() == f) {
+                        a = a + data3[4].toInt()
+                        parametro.append(a.toString().trim()).append("|")
+                    }
+                }
+
+                for (l in datos_menu) {
                     var data4 = l.toString().split("|").toTypedArray()
                     var y = data4[2]
-                    if(spinner_TipoPago.selectedItem.toString()==y){
+                    if (spinner_TipoPago.selectedItem.toString() == y) {
                         val x = data4[3]
                         parametro.append(x.trim()).append("|")
                     }
 
 
+                }
 
+
+
+                datos_pedido.put(num, parametro.toString())
+                println(datos_pedido.toString())
+                Toast.makeText(this, "Su pedido se Realizo de manera exitosa", Toast.LENGTH_SHORT).show()
             }
-
-
-
-            datos_pedido.put(num, parametro.toString())
-            println(datos_pedido.toString())
-    }}
+        }
+    }
 
     /*OBTENCION DE LAS LISTAS*/
 
@@ -136,7 +142,7 @@ class RealizarPedido : AppCompatActivity() {
             val data = i.toString().split("|").toTypedArray()
             empleados=data[2].toString()
             A.add(empleados)
-
+            Toast.makeText(this, "Pedido realizado", Toast.LENGTH_SHORT).show()
         }
         val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, A)
         spinner_pedido.adapter =adaptador
@@ -172,5 +178,7 @@ class RealizarPedido : AppCompatActivity() {
         txt_EmpleadoPe.setText(b)
 
     }
+
+
 
 }

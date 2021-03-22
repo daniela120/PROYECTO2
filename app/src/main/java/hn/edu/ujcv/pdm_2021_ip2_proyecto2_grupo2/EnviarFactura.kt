@@ -2,6 +2,7 @@ package hn.edu.ujcv.pdm_2021_ip2_proyecto2_grupo2
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_enviar_factura.*
 import kotlinx.android.synthetic.main.activity_factura.*
@@ -64,6 +65,9 @@ class EnviarFactura : AppCompatActivity() {
 
 
     private fun enviar(){
+        if (txt_Asunto.text.toString().isEmpty()){
+            Toast.makeText(this, "Debe ingresar un Asunto", Toast.LENGTH_SHORT).show()
+        }else{
         var to = arrayOf<String>(txt_CorreoDestino.text.toString())
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL,to)
@@ -94,7 +98,7 @@ class EnviarFactura : AppCompatActivity() {
         startActivity(Intent.createChooser(intent, "Email"))
 
 
-    }
+    }}
     fun inicio() {
         var a = 0
         for (data in datos_factura) {

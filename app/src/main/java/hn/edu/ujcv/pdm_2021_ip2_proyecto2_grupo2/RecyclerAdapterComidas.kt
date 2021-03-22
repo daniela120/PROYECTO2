@@ -77,23 +77,23 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
     }
 
      fun GoMexicanBurger(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
     }
 
     fun GoTortaJumbo(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
     }
 
     fun GoChilesRellenos(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
     }
 
    fun GoTacosJr(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
-        itemView.context.startActivity(intent)
+       val intent = Intent(itemView.context, RealizarPedido::class.java)
+       itemView.context.startActivity(intent)
     }
 
     private fun GoMain(itemView: View){
@@ -102,17 +102,16 @@ class RecyclerAdapterComidas: RecyclerView.Adapter<RecyclerAdapterComidas.ViewHo
 
     }
     fun GoBurritos(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
 
     }
     fun GoTacosJumbo(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
     }
-
     fun GoNachosFamiliar(itemView: View) {
-        val intent = Intent(itemView.context, RegistrarMenu::class.java)
+        val intent = Intent(itemView.context, RealizarPedido::class.java)
         itemView.context.startActivity(intent)
     }
 

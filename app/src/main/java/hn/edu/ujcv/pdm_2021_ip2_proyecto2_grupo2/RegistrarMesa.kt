@@ -39,7 +39,7 @@ class RegistrarMesa : AppCompatActivity() {
             if (txt_DescripcionMesa.text.toString().isEmpty()) {
                 Toast.makeText(this, "Ingrese la Descripcion de la Mesa", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(this, "Mesa Registrada", Toast.LENGTH_SHORT).show()
+
                 val parametro = StringBuilder()
                 num += 1
                 parametro.append("DATOS MESA").append("|")
@@ -47,6 +47,7 @@ class RegistrarMesa : AppCompatActivity() {
                 parametro.append(txt_DescripcionMesa.text.toString().trim()).append("|")
                 datos_mesa.put(num,parametro.toString())
                 println(datos_mesa.toString())
+                Toast.makeText(this, "Mesa Registrada", Toast.LENGTH_SHORT).show()
             }
         }
     }
