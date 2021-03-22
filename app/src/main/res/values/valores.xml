@@ -22,5 +22,27 @@
         <item>Mexican Burger</item>
     </string-array>
 
+    <string-array name="valoresDescripcionMenu">
+        <item>4 tacos, 2 refresco</item>
+        <item>4 nachos, 4 refrescos</item>
+        <item>2 burritos, 1 refresco</item>
+        <item>2 tacos, 1 refresco.</item>
+        <item>4 chiles rellenos, 1 refresco</item>
+        <item>4 chilaquiles, 4 refresco</item>
+        <item>1 Torta, 1 refresco</item>
+        <item>1 Mexican Burger, 1 refresco</item>
+    </string-array>
+
+    <string-array name="valoresPrecioMenu">
+        <item>350</item>
+        <item>300</item>
+        <item>250</item>
+        <item>180.</item>
+        <item>330</item>
+        <item>280</item>
+        <item>340</item>
+        <item>99</item>
+    </string-array>
+
 
 </resources>
