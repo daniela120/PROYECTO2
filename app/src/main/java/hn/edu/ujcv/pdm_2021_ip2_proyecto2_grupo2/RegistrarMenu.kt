@@ -61,27 +61,45 @@ class RegistrarMenu : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
                 if (position==0){
-                    txvDescripcion.text="4 tacos, 2 refresco "+ "\n Valor = L. 300"
+                    txvDescripcion.text="El Combo Incluye"+"\n 4 tacos, 2 refresco "+ "\n Valor = L. 300"
                 }else
                     if (position==1) {
-                        txvDescripcion.text = "4 nachos, 4 refrescos" +
+                        txvDescripcion.text = "El Combo Incluye"+"\n 4 nachos, 4 refrescos" +
                                 "\n Valor = L. 300"
 
 
                     }else
                         if (position==2) {
-                            txvDescripcion.text = "2 burritos, 1 refresco" +
+                            txvDescripcion.text = "El Combo Incluye"+"\n 2 burritos, 1 refresco" +
                                     "\nValor = L. 250"
                         }else
                             if (position==3) {
-                                txvDescripcion.text = "2 tacos, 1 refresco." +
+                                txvDescripcion.text = "El Combo Incluye"+"\n 2 tacos, 1 refresco." +
                                         "\nValor = L. 180"
-
-
-                            }
-
+                            }else
+                                if (position==4) {
+                                    txvDescripcion.text = "El Combo Incluye"+"\n 4 chiles rellenos, 1 refresco." +
+                                            "\nValor = L. 330"
+                                }else
+                                    if (position==5) {
+                                        txvDescripcion.text = "El Combo Incluye"+"\n 4 chilaquiles, 4 refresco" +
+                                                "\nValor = L. 280"
+                                    }else
+                                        if (position==6) {
+                                            txvDescripcion.text = "El Combo Incluye"+"\n 1 Torta, 1 refresco" +
+                                                    "\nValor = L. 340"
+                                        }else
+                                            if (position==7) {
+                                                txvDescripcion.text = "El Combo Incluye"+"\n 1 Mexican Burger, 1 refresco" +
+                                                        "\nValor = L. 199"
+                                            }
             }
-            }
+                                        }
+
+
+
+
+
 
 
        /* val spinner_DescripcionMenus = findViewById<Spinner>(R.id.spinner_DescripcionMenu)
@@ -126,7 +144,7 @@ class RegistrarMenu : AppCompatActivity() {
     }
 
     private fun addListItem() {
-        listItem.add(spinner_NombreMenu.selectedItem.toString()+" - "+spinner_PrecioMenu.selectedItem.toString())
+        listItem.add("Su orden es"+"\n"+spinner_NombreMenu.selectedItem.toString()+"\n - "+txvDescripcion.text.toString())
         adapter?.notifyDataSetChanged()
     }
 
