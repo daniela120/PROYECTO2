@@ -158,22 +158,32 @@ class RegistrarMenu : AppCompatActivity() {
         if (txt_CodigoMenu.text.isEmpty()) {
             Toast.makeText(this, "Ingrese el codigo del menu", Toast.LENGTH_SHORT).show()
         } else {
-            val parametro = StringBuilder()
-            num += 1
-            parametro.append("DATOS MENU").append("|")
-            parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-            parametro.append(txt_Nombre.text.toString().trim()).append("|")
-            parametro.append(txt_Detalles.text.toString().trim()).append("|")
-            parametro.append(txt_Precio.text.toString().trim()).append("|")
-            datos_menu.put(num, parametro.toString())
-            println(datos_menu.toString())
-            stado=true
+            if (txt_Nombre.text.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese un nombre del menu", Toast.LENGTH_SHORT).show()
+            } else {
+                if (txt_Detalles.text.toSet().isEmpty()) {
+                    Toast.makeText(this, "Ingrese el detalle del menu", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (txt_Precio.text.toString().isEmpty()) {
+                        Toast.makeText(this, "Ingrese el precio del menu", Toast.LENGTH_SHORT).show()
 
+                    } else {
+                        val parametro = StringBuilder()
+                        num += 1
+                        parametro.append("DATOS MENU").append("|")
+                        parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
+                        parametro.append(txt_Nombre.text.toString().trim()).append("|")
+                        parametro.append(txt_Detalles.text.toString().trim()).append("|")
+                        parametro.append(txt_Precio.text.toString().trim()).append("|")
+                        datos_menu.put(num, parametro.toString())
+                        println(datos_menu.toString())
+                        stado = true
 
+                    }
+                }
+            }
         }
     }
-
-
 
 
     fun regresar() {
