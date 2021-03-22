@@ -84,6 +84,7 @@ class EnviarFactura : AppCompatActivity() {
             e=data1[4].toString()
             a=data1[5].toString()
             f=data1[6].toString()
+            des=data1[7].toString()
 
 
         }
@@ -106,25 +107,7 @@ class EnviarFactura : AppCompatActivity() {
         var com=""
 
 
-        for(da in datos_menu) {
 
-
-            for (ju in datos_pedido) {
-                val data2 = ju.toString().split("|").toTypedArray()
-                com = data2[3].toString()
-            }
-
-
-            val data3 = da.toString().split("|").toTypedArray()
-            if (com == data3[2]) {
-                pedidos = data3[2].toString()
-                des = data3[3].toString()
-
-                println("SI SE CUMPLIO"  + pedidos.toString())
-            }
-
-
-        }
 
         for(i in datos_mesa){
             val data1 = i.toString().split("|").toTypedArray()

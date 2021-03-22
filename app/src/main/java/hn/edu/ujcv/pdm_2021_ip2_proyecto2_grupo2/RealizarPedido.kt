@@ -77,15 +77,25 @@ class RealizarPedido : AppCompatActivity() {
                 if(spinner_TipoPago.selectedItem.toString()==f){
                     a=a+data3[4].toInt()
                     parametro.append(a.toString().trim()).append("|")
-                }
+                }}
+
+                for(l in datos_menu){
+                    var data4 = l.toString().split("|").toTypedArray()
+                    var y = data4[2]
+                    if(spinner_TipoPago.selectedItem.toString()==y){
+                        val x = data4[3]
+                        parametro.append(x.trim()).append("|")
+                    }
+
 
 
             }
+
+
+
             datos_pedido.put(num, parametro.toString())
             println(datos_pedido.toString())
-
-        }
-    }
+    }}
 
     /*OBTENCION DE LAS LISTAS*/
 

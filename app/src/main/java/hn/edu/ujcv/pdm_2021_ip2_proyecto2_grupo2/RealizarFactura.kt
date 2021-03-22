@@ -21,7 +21,7 @@ class RealizarFactura : AppCompatActivity() {
     var datos_pedido: HashMap<Int, String> = hashMapOf()
     var datos_factura: HashMap<Int, String> = hashMapOf()
     var num = 0
-    var cont=0
+    var des=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,6 +86,7 @@ class RealizarFactura : AppCompatActivity() {
                             parametro.append(txt_EmpleadoFa.text.toString().trim()).append("|")
                             parametro.append(txt_COMBO.text.toString().trim()).append("|")
                             parametro.append(txt_Total.text.toString().trim()).append("|")
+                            parametro.append(des.trim()).append("|")
                             datos_factura.put(num, parametro.toString())
                             println(datos_factura.toString())
                             Toast.makeText(this, "Factura Realizada", Toast.LENGTH_SHORT).show()
@@ -163,9 +164,14 @@ class RealizarFactura : AppCompatActivity() {
 
             val data3 = da.toString().split("|").toTypedArray()
                 c = c + data3[4].toInt()
-                d = d + "" + data3[3].toString()
+                d = d + data3[3].toString()+","
+                des=des+data3[5].toString()+","
+
+
+
                 println("SI SE CUMPLIO")
             }
+
 
 
 
