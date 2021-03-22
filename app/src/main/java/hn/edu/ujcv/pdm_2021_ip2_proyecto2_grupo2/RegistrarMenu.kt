@@ -49,7 +49,7 @@ class RegistrarMenu : AppCompatActivity() {
         }
 
 
-        val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
+     /* val spinner_Menus = findViewById<Spinner>(R.id.spinner_NombreMenu)
         val lista_Menus = resources.getStringArray(R.array.valoresMenu)
         val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Menus)
 
@@ -102,7 +102,7 @@ class RegistrarMenu : AppCompatActivity() {
 
 
 
-       /* val spinner_DescripcionMenus = findViewById<Spinner>(R.id.spinner_DescripcionMenu)
+       val spinner_DescripcionMenus = findViewById<Spinner>(R.id.spinner_DescripcionMenu)
         val lista_DescripcionMenus  = resources.getStringArray(R.array.valoresDescripcionMenu)
         val adaptador1 = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_DescripcionMenus )
 
@@ -144,7 +144,7 @@ class RegistrarMenu : AppCompatActivity() {
     }
 
     private fun addListItem() {
-        listItem.add("Su orden es"+"\n"+spinner_NombreMenu.selectedItem.toString()+"\n - "+txvDescripcion.text.toString())
+        listItem.add("MENU CREADO"+"\n"+txt_CodigoMenu.text.toString()+"\n"+txt_Nombre.text.toString()+"\n"+txt_Detalles.text.toString()+"\n"+txt_Precio.text.toString())
         adapter?.notifyDataSetChanged()
     }
 
@@ -164,8 +164,10 @@ class RegistrarMenu : AppCompatActivity() {
             val parametro = StringBuilder()
             num += 1
             parametro.append("DATOS MENU").append("|")
-            parametro.append(txt_CodigoMenu.text.toString().trim()).append("|")
-            parametro.append(spinner_NombreMenu.selectedItem.toString().trim()).append("|")
+            parametro.append(txt_CodigoMenu.text.toString().trim()).append("\n")
+            parametro.append(txt_Nombre.text.toString().trim()).append("\n")
+            parametro.append(txt_Detalles.text.toString().trim()).append("\n")
+            parametro.append(txt_Precio.text.toString().trim()).append("\n")
             datos_menu.put(num, parametro.toString())
             println(datos_menu.toString())
             stado=true
